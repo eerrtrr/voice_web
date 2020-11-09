@@ -11,7 +11,7 @@
  - **npm/nodejs**
  You need to have nodejs and npm to hopefully see one day this project works.
  For **Mac & Windows**, just download nodejs installer  (search on the internet).
- For **Linux OS**, the npm package is enought to install both. (sudo apt install npm for ubuntu for exemple).
+ For **Linux OS**, the npm package is enought to install both. (`sudo apt install npm` for ubuntu for exemple).
  &nbsp;
  - **Angular**
 The end will entirely be with you cmd/terminal. Open it and simply type `npm install -g @angular/cli`. Angular and its tools will automatically be installed!
