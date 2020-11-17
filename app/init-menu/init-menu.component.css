@@ -4,7 +4,6 @@
     color: white;
     font-size: 25px;
     font-weight: bold;
-    transition: 2s;
 }
 
 #init-button span, #init-button span:visited, #init-button span:active {
@@ -15,6 +14,21 @@
 #init-button span:hover{
     color: rgb(255, 217, 0);
 }
+
+
+#popup{
+    visibility: hidden;
+    display: block;
+    font-size: 15px;
+    font-weight: normal;
+}
+
+#init-button span:hover + #popup{
+    visibility: visible;
+    color: rgb(255, 217, 0);
+}
+
+
 
 .bg_true{
     background-image: url("../../assets/images/1st_page_bg.jpg");
