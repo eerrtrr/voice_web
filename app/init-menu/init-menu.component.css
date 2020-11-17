@@ -1,4 +1,4 @@
-#accept_button{
+#init-button{
     background-color: rgba(0,0,0,0.0);
     border: none;
     color: white;
@@ -7,12 +7,12 @@
     transition: 2s;
 }
 
-#accept_button span, #accept_button span:visited, #accept_button span:active {
+#init-button span, #init-button span:visited, #init-button span:active {
     color: inherit;
     text-decoration: none;
 }
 
-#accept_button span:hover{
+#init-button span:hover{
     color: rgb(255, 217, 0);
 }
 
