@@ -1,0 +1,56 @@
+#accept_button{
+    background-color: rgba(0,0,0,0.0);
+    border: none;
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    transition: 2s;
+}
+
+#accept_button span, #accept_button span:visited, #accept_button span:active {
+    color: inherit;
+    text-decoration: none;
+}
+
+#accept_button span:hover{
+    color: rgb(255, 217, 0);
+}
+
+.bg_true{
+    background-image: url("../../assets/images/1st_page_bg.jpg");
+    height: 100%;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    justify-content: center;
+
+    display: none;
+}
+
+.bg_false{
+    background-image: url("../../assets/images/1st_page_bg.jpg");
+    height: 100%;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    justify-content: center;
+
+    display: flex;
+}
+
+.bg_text{
+    background: rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 40px 20px rgba(0, 0, 0, 0.2);
+
+    color: white;
+    font-size: 35px;
+    font-family: Montserrat;
+    margin: auto;
+    width: 50%;
+    text-align: center;
+    font-weight: bold;
+}

@@ -1,12 +1,2 @@
-<div class="bg">
-  <div class="bg_text">
-    <h1>VOICE INTO THE WEB</h1>
-    <start-button></start-button>
-  </div>
-</div>
-
-
-<div class="home" hidden>
-  <a id="home"></a>
-  <p>Here is the main page with all your internet researches</p>
-</div>
+<init-menu [isInitHidden]="initHidden" (btnPressed)="updateInitBtnState($event)"></init-menu>
+<main-menu [isMainShown]="initHidden"></main-menu>

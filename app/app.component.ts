@@ -5,6 +5,20 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'Angular-project';
+
+export class AppComponent{
+
+	//attributes
+	initHidden : boolean = false;
+	initBtnState : boolean = false;
+
+	//methods
+	constructor(){}
+
+	updateInitBtnState(state : boolean){
+		this.initBtnState = state;
+		console.log("init button pressed !");
+
+		this.initHidden = true;
+	}
 }
