@@ -1,0 +1,17 @@
+#accept_button{
+    background-color: rgba(0,0,0,0.0);
+    border: none;
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    transition: 2s;
+}
+
+#accept_button a, #accept_button a:visited, #accept_button a:active {
+    color: inherit;
+    text-decoration: none;
+}
+
+#accept_button a:hover{
+    color: rgb(255, 217, 0);
+}
