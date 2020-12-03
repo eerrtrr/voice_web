@@ -1,3 +1,8 @@
-[
-	{"research" : "|carcharodontosaure|"},
-]
+{
+  "research": [
+    {
+      "name": "Google",
+      "id": 1
+    }
+  ]
+}

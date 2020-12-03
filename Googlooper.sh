@@ -21,11 +21,12 @@ do
 		researchData=`cat assets/research.json`
 
 		#get the concerned line
-		researchLine=`echo "${researchData}" | cut -d'
-' -f 2`
+		researchLine=$(echo  $researchData | tr "
+		" " \n")
 
 		#get the request (between '|')
 		research=`echo "${researchLine}" | cut -d'|' -f 2`
+		echo $research
 
 		googler -c fr --exact --json --noprompt "${research}" > assets/result.json
 	fi

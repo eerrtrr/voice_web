@@ -1,77 +1,231 @@
 [
   {
-    "abstract": "",
-    "title": "Carcharodontosaure - Vikidia, l'encyclopédie des 8-13 ans",
-    "url": "https://fr.vikidia.org/wiki/Carcharodontosaure"
-  },
-  {
-    "abstract": "En 2005, Stephen L. Brusatte et Paul Sereno ont étudié une deuxième espèce de carcharodontosaure différente de C. saharicus dans certains aspects du ...",
+    "abstract": "ORCID, ResearcherID, Scopus Author ID, Google Scholar Citation ... will easily and accurately group all the citations of your publications into one pool. A profile generally lists your name, chosen keywords of research interest, ...",
     "matches": [
       {
-        "offset": 78,
-        "phrase": "carcharodontosaure"
-      }
-    ],
-    "metadata": "Super-famille : † Allosauroidea | Sous-famille : † Carcharodontosaurinae | Famille : † Carcharodontosauridae",
-    "title": "Carcharodontosaurus — Wikipédia",
-    "url": "https://fr.wikipedia.org/wiki/Carcharodontosaurus"
-  },
-  {
-    "abstract": "Carcharodontosaurus (Carcharodontosaure). Le dinosaure Carcharodontosaurus est un carnivore de la famille des carcharodontosaurids qui a vécu il y a 93 à ...",
-    "matches": [
-      {
-        "offset": 21,
-        "phrase": "Carcharodontosaure"
-      }
-    ],
-    "title": "Carcharodontosaurus (Carcharodontosaure) : tout sur ce ...",
-    "url": "https://www.jurassic-world.com/carcharodontosaurus"
-  },
-  {
-    "abstract": "Signification : lézard aux dents de requin. Ce terrifiant Théropode était l'un des plus grands de ce groupe de dinosaures. En effet, celui-ci mesurait 12 à 13 ...",
-    "title": "Le carcharodontosaure, un lézard aux dents de requin",
-    "url": "https://www.futura-sciences.com/planete/photos/paleontologie-top-34-representations-dinosaures-575/terre-carcharodontosaure-lezard-dents-requin-1714/"
-  },
-  {
-    "abstract": "Le Carcharodontosaurus est un dinosaure proche d'Allosaurus. Il s'agit de l'un des plus grands dinosaures carnivores (14 à 15 mètres de long, pour un poids ...",
-    "title": "Carcharodontosaurus",
-    "url": "https://www.futura-sciences.com/planete/definitions/dinosaure-carcharodontosaurus-8767/"
-  },
-  {
-    "abstract": "Carcharodontosaurus (Carcharodontosaure) : tout sur ce dinosaure. Le dinosaure Carcharodontosaurus est un carnivore qui possède une mâchoire énorme et ...",
-    "matches": [
-      {
-        "offset": 21,
-        "phrase": "Carcharodontosaure"
-      }
-    ],
-    "title": "Carcharodontosaurus (Carcharodontosaure) : tout ... - Pinterest",
-    "url": "https://www.pinterest.fr/pin/553168766704418293/"
-  },
-  {
-    "abstract": "En 1924, deux dents ont été trouvées dans l' intercalaire continental d' Algérie , montrant ce qui était à l'époque des caractéristiques uniques.",
-    "metadata": "23 nov. 2020",
-    "title": "Carcharodontosaure - Carcharodontosaurus - qaz.wiki",
-    "url": "https://fr.qaz.wiki/wiki/Carcharodontosaurus"
-  },
-  {
-    "abstract": "Carcharodontosaure. Un carcharodontosaure. Nom scientifique, Carcharodontosaurus. Classification, Super-ordre : Dinosaure · Ordre : Saurischien Sous-ordre ...",
-    "matches": [
-      {
-        "offset": 0,
-        "phrase": "Carcharodontosaure"
+        "offset": 35,
+        "phrase": "ID"
       },
       {
-        "offset": 23,
-        "phrase": "carcharodontosaure"
+        "offset": 39,
+        "phrase": "Google"
+      },
+      {
+        "offset": 144,
+        "phrase": "one"
+      },
+      {
+        "offset": 185,
+        "phrase": "name"
+      },
+      {
+        "offset": 210,
+        "phrase": "research"
       }
     ],
-    "title": "Carcharodontosaure - Campus",
-    "url": "https://zims-fr.kiwix.campusafrica.gos.orange.com/vikidia_fr_all_maxi/A/Carcharodontosaure.html"
+    "metadata": "9 juil. 2020",
+    "title": "ORCID, ResearcherID, Scopus Author ID, Google Scholar ...",
+    "url": "https://canberra.libguides.com/c.php?g=599294&p=4149320"
   },
   {
-    "abstract": "This is a large Carcharodontosaurus saharicus qualtity tooth from the Kem Kem Formation in Morocco. Carcharodontosaurus was a carnivorous dinosaur, ...",
-    "title": "Carcharodontosaure - Dent - Catawiki",
-    "url": "https://www.catawiki.fr/l/42664155-carcharodontosaure-dent"
+    "abstract": "where \"\\1\" is a backreference to the stuff in brackets. Try ?regexp and ?sub ... This returns the Google Scholar ID from the text (same as above).",
+    "matches": [
+      {
+        "offset": 8,
+        "phrase": "1"
+      },
+      {
+        "offset": 98,
+        "phrase": "Google"
+      },
+      {
+        "offset": 113,
+        "phrase": "ID"
+      }
+    ],
+    "metadata": "31 oct. 2017",
+    "title": "Retrieving Google Scholar IDs based on name information ...",
+    "url": "https://stackoverflow.com/questions/47034638/retrieving-google-scholar-ids-based-on-name-information"
+  },
+  {
+    "abstract": "I want to open my google scholar account with my Gmail address. Mail ... Also you can buy your domain , may be in your name like Anatoly. ... that one is nothing even though one has earned his/her right for independent research with a PhD degree. ... In spite of having institutional email ID still not verified by google scholar.",
+    "matches": [
+      {
+        "offset": 18,
+        "phrase": "google"
+      },
+      {
+        "offset": 119,
+        "phrase": "name"
+      },
+      {
+        "offset": 147,
+        "phrase": "one"
+      },
+      {
+        "offset": 174,
+        "phrase": "one"
+      },
+      {
+        "offset": 219,
+        "phrase": "research"
+      },
+      {
+        "offset": 290,
+        "phrase": "ID"
+      },
+      {
+        "offset": 315,
+        "phrase": "google"
+      }
+    ],
+    "metadata": "61 réponses",
+    "title": "How can I create a Google Scholar account without an ...",
+    "url": "https://www.researchgate.net/post/How-can-I-create-a-Google-Scholar-account-without-an-institutional-mail-ID"
+  },
+  {
+    "abstract": "",
+    "title": "LibGuides: Researcher Profiles: ORCID, ResearcherID ...",
+    "url": "https://libguides.stir.ac.uk/c.php?g=530505&p=3628775"
+  },
+  {
+    "abstract": "A Google Scholar profile is a very simple way of collating your ... You'll need a Google account before you can begin - use your existing account or create one. ... Add keywords relating to your research and add a link to your University ... Be careful if you have a common name as publications by others may ...",
+    "matches": [
+      {
+        "offset": 2,
+        "phrase": "Google"
+      },
+      {
+        "offset": 82,
+        "phrase": "Google"
+      },
+      {
+        "offset": 156,
+        "phrase": "one"
+      },
+      {
+        "offset": 195,
+        "phrase": "research"
+      },
+      {
+        "offset": 274,
+        "phrase": "name"
+      }
+    ],
+    "metadata": "Il y a 3 jours",
+    "title": "Create a Google Scholar Profile - Boost your academic profile ...",
+    "url": "https://libguides.reading.ac.uk/boost/google-scholar-profile"
+  },
+  {
+    "abstract": "Internet Intelligence & Investigations And Social Media Research ... The Google Account ID Number is usually 21 digits long and starts with a 1. ... Then on the right-hand side it shows the name of the documents owner, the date it was created ...",
+    "matches": [
+      {
+        "offset": 56,
+        "phrase": "Research"
+      },
+      {
+        "offset": 73,
+        "phrase": "Google"
+      },
+      {
+        "offset": 88,
+        "phrase": "ID"
+      },
+      {
+        "offset": 142,
+        "phrase": "1"
+      },
+      {
+        "offset": 190,
+        "phrase": "name"
+      }
+    ],
+    "title": "Google User ID's - UK-OSINT",
+    "url": "https://www.uk-osint.net/gmailids.html"
+  },
+  {
+    "abstract": "Kim's personal ORCID ID thus enables him to link his name not just ... “If I really want to find out about you, I just google your name,” she says.",
+    "matches": [
+      {
+        "offset": 21,
+        "phrase": "ID"
+      },
+      {
+        "offset": 53,
+        "phrase": "name"
+      },
+      {
+        "offset": 119,
+        "phrase": "google"
+      },
+      {
+        "offset": 131,
+        "phrase": "name"
+      }
+    ],
+    "metadata": "7 oct. 2015",
+    "title": "Research profiles: A tag of one's own | Nature",
+    "url": "https://www.nature.com/articles/nj7572-281a"
+  },
+  {
+    "abstract": "In order to contribute to the broader research community, Google periodically ... A 1-month trace of every job submission, task assignment, and resource-usage data ... 5,800 transcribed high-quality audio Javanese [jv-id] sentences recorded by ... antecedent name), sampled from Wikipedia for the evaluation of coreference ...",
+    "matches": [
+      {
+        "offset": 38,
+        "phrase": "research"
+      },
+      {
+        "offset": 58,
+        "phrase": "Google"
+      },
+      {
+        "offset": 84,
+        "phrase": "1"
+      },
+      {
+        "offset": 218,
+        "phrase": "id"
+      },
+      {
+        "offset": 259,
+        "phrase": "name"
+      }
+    ],
+    "title": "Datasets – Google Research",
+    "url": "https://research.google/tools/datasets/"
+  },
+  {
+    "abstract": "Example 1: A storage service has a collection of buckets , where each bucket has a ... The trailing resource ID in a resource name may have more than one URI ...",
+    "matches": [
+      {
+        "offset": 8,
+        "phrase": "1"
+      },
+      {
+        "offset": 109,
+        "phrase": "ID"
+      },
+      {
+        "offset": 126,
+        "phrase": "name"
+      },
+      {
+        "offset": 150,
+        "phrase": "one"
+      }
+    ],
+    "title": "Resource Names | Cloud APIs | Google Cloud",
+    "url": "https://cloud.google.com/apis/design/resource_names"
+  },
+  {
+    "abstract": "Organization information. Role. Faculty, IT Admin, PhD Candidate. Organization Name.",
+    "matches": [
+      {
+        "offset": 79,
+        "phrase": "Name"
+      }
+    ],
+    "title": "Research Credits | Google for Education",
+    "url": "https://edu.google.com/programs/credits/research/"
   }
 ]

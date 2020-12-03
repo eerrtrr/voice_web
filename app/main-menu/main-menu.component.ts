@@ -14,7 +14,7 @@ export class MainMenuComponent{
 	//attributes
 	@Input() isMainShown : boolean;
   data: string;
-  baseURL: string = "http://localhost:3000/search";
+  baseURL: string = "http://localhost:3000/research/1";
 
 
 	//methods
@@ -27,9 +27,10 @@ export class MainMenuComponent{
   public setJSON(): Observable<any>{
     var headers = {'content-type':'application/json'};
     var temp = (<HTMLInputElement>document.getElementById("name")).value;
+    temp = "|" + temp + "|";
     const temp_json = JSON.stringify({name:temp});
     console.log(temp_json);
-    return this.http.post(this.baseURL,temp_json,{'headers':headers});
+    return this.http.put(this.baseURL,temp_json,{'headers':headers});
   }
 
 
@@ -39,6 +40,6 @@ export class MainMenuComponent{
   }
 
   public getJSON(): Observable<any>{
-    return this.http.get('../../assets/data.txt', {responseType: 'text'});
+    return this.http.get('../../assets/result.json', {responseType: 'text'});
   }
 }
