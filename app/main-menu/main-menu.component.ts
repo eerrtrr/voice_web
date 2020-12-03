@@ -1,8 +1,7 @@
 import { Component, Input } from '@angular/core';
-import { CookieService } from 'ngx-cookie-service';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-//import SampleJson from '../../cookies/data.json';
+
 
 @Component({
   selector: 'main-menu',
@@ -14,24 +13,32 @@ export class MainMenuComponent{
 
 	//attributes
 	@Input() isMainShown : boolean;
-  cookieValue: string;
   data: string;
-	//methods
-	constructor(private cookieService: CookieService, private http: HttpClient){}
+  baseURL: string = "http://localhost:3000/search";
 
-  createCookie(){
-      var data = (<HTMLInputElement>document.getElementById('name')).value;
-      this.cookieService.set(data, '');
-      console.log("Cookie created");
+
+	//methods
+	constructor(private http: HttpClient){}
+
+  sendData(){
+    this.setJSON().subscribe(data => {console.log(data);});
+  }
+
+  public setJSON(): Observable<any>{
+    var headers = {'content-type':'application/json'};
+    var temp = (<HTMLInputElement>document.getElementById("name")).value;
+    const temp_json = JSON.stringify({name:temp});
+    console.log(temp_json);
+    return this.http.post(this.baseURL,temp_json,{'headers':headers});
   }
 
 
-  readAnswer(){
-    this.getJSON().subscribe(data => {console.log(data);})
+
+  readData(){
+    this.getJSON().subscribe(data => {console.log(data);});
   }
 
   public getJSON(): Observable<any>{
     return this.http.get('../../assets/data.txt', {responseType: 'text'});
   }
-
 }
