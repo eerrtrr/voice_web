@@ -1,4 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { VoiceRecognitionService } from '../service/web-speech-api.service';
+
 
 @Component({
   selector: 'init-menu',
@@ -17,5 +19,6 @@ export class InitMenuComponent{
 
 	sendBtnStateToSuper() : void{
 		this.btnPressed.emit(true);
+		
 	}
 }

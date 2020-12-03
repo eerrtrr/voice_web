@@ -9,13 +9,15 @@ import { MainMenuComponent } from './main-menu/main-menu.component';
 import { WebResearchComponent } from './web-research/web-research.component';
 
 import { CookieService } from 'ngx-cookie-service';
+import { SpeechToTextComponent } from './speech-to-text/speech-to-text.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     InitMenuComponent,
     MainMenuComponent,
-    WebResearchComponent
+    WebResearchComponent,
+    SpeechToTextComponent
   ],
   imports: [
     BrowserModule,
