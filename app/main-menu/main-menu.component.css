@@ -1,20 +1,40 @@
-.main_false{
-    height: 100%;
-
-    display: none;
+.container-false{
+    visibility: hidden;
 }
 
-.main_true{
-    height: 100%;
-
-    display: flex;
+.container-true{
+    visibility: visible;
+    margin: 0%;
+    padding: 0%;
 }
 
-label {
-    display: block;
-    font: 1rem 'Fira Sans', sans-serif;
+
+
+/*pages*/
+.page-box{
+	width: 100%;
+	height: 100%;
+	border-color: #000;
+	border: 1px solid #000;
+	position: absolute;
+	text-align: center;
+	background-image: url("../../assets/images/pages_bg.jpg"); /*rgba( 80,  0,255, 0.4);*/
 }
 
-input, label {
-    margin: .4rem 0;
+.page{
+	background: rgb(0, 0, 0); /*rgba(150,200,255, 1);*/
+	padding: 0.5%;
+	border: 1px solid rgba(  0,  0,  0, 1);
+	border-radius: 16px;
+}
+
+.page-search-bar{
+	margin: 2% 2% 8% 2%;
+}
+
+.page-section{
+	border-style: groove none none none;
+	border-color: rgba(  0,150,255, 1);
+	padding: 1% 1%;
+	margin: 1% 1% 1% 1%;
 }

@@ -60,30 +60,6 @@
     "url": "https://www.nature.com/articles/nature02688"
   },
   {
-    "abstract": "Paul Carié, Mauritian naturalist and forgotten collector of dodo bones ... out research on many aspects of the zoology of the Mascarene islands. ... 1) was born on Mauritius on 6 November, 1876 (see biography by Halais, 1941a). ... bears “Vallée aux Prêtres” as geographical origin, as well as Carié's name.",
-    "matches": [
-      {
-        "offset": 60,
-        "phrase": "dodo"
-      },
-      {
-        "offset": 79,
-        "phrase": "research"
-      },
-      {
-        "offset": 149,
-        "phrase": "1"
-      },
-      {
-        "offset": 302,
-        "phrase": "name"
-      }
-    ],
-    "metadata": "8 mars 2020",
-    "title": "Vol. 3/3 | 2020 | Angst & Buffetaut",
-    "url": "http://revue-colligo.fr/index.php/vol-3-num-3?id=40"
-  },
-  {
     "abstract": "PDF | More has been written about the dodo Raphus cucullatus of Mauritius than any other bird. ... Find, read and cite all the research you need on ResearchGate. ... Owen had laid out the skeletal ... Observer Used Dodo Name 1 The illustration, done long after the event by an artist interpreting the accounts of others, used ...",
     "matches": [
       {
@@ -142,6 +118,32 @@
     "url": "http://dictionnaire.sensagent.leparisien.fr/Dodo/en-en/"
   },
   {
+    "abstract": "Read our COVID-19 research and news.",
+    "matches": [
+      {
+        "offset": 18,
+        "phrase": "research"
+      }
+    ],
+    "title": "Plant-Animal Mutualism: Coevolution with Dodo Leads to ...",
+    "url": "https://science.sciencemag.org/content/197/4306/885"
+  },
+  {
+    "abstract": "I believe that within one or two decades, individual, unorganized healthcare professionals will become a minority. Two-Party Research in a Three-Party World. Up ...",
+    "matches": [
+      {
+        "offset": 22,
+        "phrase": "one"
+      },
+      {
+        "offset": 125,
+        "phrase": "Research"
+      }
+    ],
+    "title": "The Way of the Dodo | OpenMind",
+    "url": "https://www.bbvaopenmind.com/en/articles/way-dodo/"
+  },
+  {
     "abstract": "Official Symbol: dodprovided by FlyBase; Official Full Name: dodoprovided by FlyBase; Primary source: FLYBASE:FBgn0015379; Locus tag ...",
     "matches": [
       {
@@ -158,22 +160,23 @@
     "url": "https://www.ncbi.nlm.nih.gov/gene?Db=gene&Cmd=DetailsSearch&Term=33111"
   },
   {
-    "abstract": "I believe that within one or two decades, individual, unorganized healthcare professionals will become a minority. Two-Party Research in a Three-Party World. Up ...",
+    "abstract": "1. figure1. a Google earth image of Mare aux Songes and position of ... Results. During the 2006–2008 field campaigns of the Dodo Research ...",
     "matches": [
       {
-        "offset": 22,
-        "phrase": "one"
+        "offset": 0,
+        "phrase": "1"
       },
       {
         "offset": 125,
-        "phrase": "Research"
+        "phrase": "Dodo Research"
       }
     ],
-    "title": "The Way of the Dodo | OpenMind",
-    "url": "https://www.bbvaopenmind.com/en/articles/way-dodo/"
-  },
-  {
-    "abstract": "Read our COVID-19 research and news.",
+    "metadata": "27 janv. 2012",
+    "title": "Dodo remains from an in situ context from Mare aux Songes ...",
+    "url": "https://link.springer.com/article/10.1007/s00114-012-0882-8"
+  }
+]
+ research and news.",
     "matches": [
       {
         "offset": 18,
@@ -182,24 +185,5 @@
     ],
     "title": "Plant-Animal Mutualism: Coevolution with Dodo Leads to ...",
     "url": "https://science.sciencemag.org/content/197/4306/885"
-  }
-]
-ster (fruit fly)] - Gene - NCBI",
-    "url": "https://www.ncbi.nlm.nih.gov/gene?Db=gene&Cmd=DetailsSearch&Term=33111"
-  },
-  {
-    "abstract": "I believe that within one or two decades, individual, unorganized healthcare professionals will become a minority. Two-Party Research in a Three-Party World. Up ...",
-    "matches": [
-      {
-        "offset": 22,
-        "phrase": "one"
-      },
-      {
-        "offset": 125,
-        "phrase": "Research"
-      }
-    ],
-    "title": "The Way of the Dodo | OpenMind",
-    "url": "https://www.bbvaopenmind.com/en/articles/way-dodo/"
   }
 ]

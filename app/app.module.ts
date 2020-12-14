@@ -10,6 +10,9 @@ import { WebResearchComponent } from './web-research/web-research.component';
 
 import { CookieService } from 'ngx-cookie-service';
 import { SpeechToTextComponent } from './speech-to-text/speech-to-text.component';
+import { PageLeftComponent } from './page-left/page-left.component';
+import { PageRightComponent } from './page-right/page-right.component';
+import { PageCenterComponent } from './page-center/page-center.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,10 @@ import { SpeechToTextComponent } from './speech-to-text/speech-to-text.component
     InitMenuComponent,
     MainMenuComponent,
     WebResearchComponent,
-    SpeechToTextComponent
+    SpeechToTextComponent,
+    PageLeftComponent,
+    PageRightComponent,
+    PageCenterComponent
   ],
   imports: [
     BrowserModule,

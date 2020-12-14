@@ -1,6 +1,8 @@
-<div class="main_{{isMainShown}}">
-	<input type="text" id="name" value="">
-	<button (click)="sendData()">Rechercher</button>
-	<button (click)="readData()">Answer</button>
-	<speech-to-text></speech-to-text>
+<div id="container" class="container-{{isMainShown}}">
+	<div class="page-box">
+		<speech-to-text></speech-to-text>
+		<page-left></page-left>
+		<page-center></page-center>
+		<page-right></page-right>
+	</div>
 </div>

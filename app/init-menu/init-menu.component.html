@@ -1,9 +1,13 @@
-<div class="bg_{{isInitHidden}}" hidden>
-	<div class="bg_text">
-		<h1>VOICE INTO THE WEB</h1>
-		<button id="init-button" (click)="sendBtnStateToSuper()">
+<div id="container" class="container-{{isInitHidden}}">
+	<!-- middle box -->
+	<div class="middle-box">
+		<h1 class="title">VOICE WEB</h1>
+		<button class="init-button" type="button" (click)="goToMainMenu()">
 			<span>Click here to continue</span>
-			<span id="popup">By continuing you accept that your microphone will be activated as long as the tab is not closed or refreshed</span>
+			<div class="popup">
+				By continuing you accept that your microphone<br>
+				will be activated as long as the tab is not closed or refreshed.
+			</div>
 		</button>
 	</div>
 </div>

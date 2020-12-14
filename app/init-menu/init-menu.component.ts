@@ -17,7 +17,7 @@ export class InitMenuComponent{
 	//methods
 	constructor(){}
 
-	sendBtnStateToSuper() : void{
+	goToMainMenu(): void{
 		this.btnPressed.emit(true);
 		
 	}

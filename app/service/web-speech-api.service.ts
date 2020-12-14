@@ -44,12 +44,6 @@ export class VoiceRecognitionService {
       }
     });
   }
-  stop() {
-    this.isStoppedSpeechRecog = true;
-    this.wordConcat()
-    this.recognition.stop();
-    console.log("End speech recognition")
-  }
 
   wordConcat() {
     this.text = this.text + ' ' + this.tempWords + '.';

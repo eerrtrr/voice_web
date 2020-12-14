@@ -1,0 +1,15 @@
+.container{
+	position: fixed;
+	top: 10%;
+	left: 1%;
+	height: 70%;
+	opacity: 0.5;
+}
+
+.results{
+	background-color: rgba(230,230,230, 1);
+	border-style: solid;
+	padding: 1% 1%;
+	height: 92%;
+	overflow: scroll;
+}

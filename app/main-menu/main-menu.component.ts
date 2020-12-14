@@ -20,6 +20,7 @@ export class MainMenuComponent{
 	//methods
 	constructor(private http: HttpClient){}
 
+
   sendData(){
     this.setJSON().subscribe(data => {console.log(data);});
   }
