@@ -8,7 +8,6 @@ import { InitMenuComponent } from './init-menu/init-menu.component';
 import { MainMenuComponent } from './main-menu/main-menu.component';
 import { WebResearchComponent } from './web-research/web-research.component';
 
-import { CookieService } from 'ngx-cookie-service';
 import { SpeechToTextComponent } from './speech-to-text/speech-to-text.component';
 import { PageLeftComponent } from './page-left/page-left.component';
 import { PageRightComponent } from './page-right/page-right.component';
@@ -30,7 +29,6 @@ import { PageCenterComponent } from './page-center/page-center.component';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
