@@ -1,120 +1,112 @@
 [
   {
-    "abstract": "Découvrez l'email GMX pratique et les outils d'organisation ...",
-    "sitelinks": [
+    "abstract": "Achetez vos chocolats en ligne (ganaches, truffes…) en toute sérénité. La Maison du Chocolat a été élue comme l'un des Meilleurs sites e-commerce de 2019 !",
+    "matches": [
       {
-        "abstract": "Découvrez l'email GMX pratique et les outils d'organisation ...",
-        "index": "1a",
-        "title": "Email",
-        "url": "https://www.gmx.fr/mail/"
+        "offset": 12,
+        "phrase": "chocolats"
       },
       {
-        "abstract": "Innovante, intelligente, différente. À propos de GMX. Contact. 1&1 ...",
-        "index": "1b",
-        "title": "À propos",
-        "url": "https://www.gmx.fr/entreprise/a-propos-de-gmx/"
+        "offset": 84,
+        "phrase": "Chocolat"
+      }
+    ],
+    "title": "La Maison du Chocolat: Vente en ligne de chocolats et ...",
+    "url": "https://www.lamaisonduchocolat.com/fr_fr"
+  },
+  {
+    "abstract": "Le chocolat [ ʃɔkɔla], terme d'origine mésoaméricaine, est un aliment plus ou moins sucré produit à partir de la fève de cacao. Celle-ci est fermentée, torréfiée, ...",
+    "matches": [
+      {
+        "offset": 3,
+        "phrase": "chocolat"
+      }
+    ],
+    "metadata": "Lieu d’origine : Amérique du Sud / Amérique c... | Ingrédients : Fève de cacao torréfiée | Place dans le service : Dessert ou collation | Classification : Pâtisserie, confiserie, dessert",
+    "title": "Chocolat — Wikipédia",
+    "url": "https://fr.wikipedia.org/wiki/Chocolat"
+  },
+  {
+    "abstract": "Tous nos bouquets, boîtes et coffrets de délicieux chocolats sont livrés à votre domicile. Livré partout en France. Produits artisanaux. Cadeau d'entreprise.",
+    "matches": [
+      {
+        "offset": 51,
+        "phrase": "chocolats"
+      }
+    ],
+    "title": "Atelier du chocolat : bouquet de chocolat et achat de chocolat ...",
+    "url": "https://www.atelierduchocolat.fr/fr/"
+  },
+  {
+    "abstract": "Fiers de nos origines et de notre savoir-faire à la française, découvrez notre large gamme de chocolats, de confiseries et de gourmandises à offrir.",
+    "matches": [
+      {
+        "offset": 94,
+        "phrase": "chocolats"
+      }
+    ],
+    "title": "De Neuville, chocolat français",
+    "url": "https://www.chocolat-deneuville.com/"
+  },
+  {
+    "abstract": "Truffes chocolat, chocolat en tablettes, boîte de chocolat, chocolat bio, chocolat Valrhona, chocolat Voisin… le chocolat sous toutes ses formes.",
+    "matches": [
+      {
+        "offset": 8,
+        "phrase": "chocolat"
       },
       {
-        "abstract": "La création d'une adresse mail avec GMX. Le processus de ...",
-        "index": "1c",
-        "title": "Créer une adresse mail",
-        "url": "https://www.gmx.fr/mail/creer-compte-email/"
+        "offset": 18,
+        "phrase": "chocolat"
       },
       {
-        "abstract": "Aide en Ligne. ⌫. ChercheCherche ...",
-        "index": "1d",
-        "title": "Aide en Ligne",
-        "url": "https://support.gmx.fr/index.html"
-      }
-    ],
-    "title": "Email",
-    "url": "https://www.gmx.fr/mail/"
-  },
-  {
-    "abstract": "CaraMail fut l'un des plus importants portails Web communautaires francophones puis la messagerie web attitrée du portail Lycos français. Après avoir essayé ...",
-    "matches": [
-      {
-        "offset": 0,
-        "phrase": "CaraMail"
-      }
-    ],
-    "title": "CaraMail — Wikipédia",
-    "url": "https://fr.wikipedia.org/wiki/CaraMail"
-  },
-  {
-    "abstract": "Son site Internet JuneLive.net permet de naviguer sur la messagerie CaraMail de l'époque.",
-    "matches": [
-      {
-        "offset": 68,
-        "phrase": "CaraMail"
-      }
-    ],
-    "metadata": "13 févr. 2020",
-    "title": "CaraMail ressuscitée grâce à un développeur Web fan",
-    "url": "https://www.20minutes.fr/high-tech/2717679-20200213-caramail-ressuscitee-grace-developpeur-web-fan"
-  },
-  {
-    "abstract": "Octobre 1997 : service de mail gratuit, Caramail est créé par les fondateurs du portail Lokace, Orianne Garcia, Alexandre Roos et Christophe Schaming. Le succès ...",
-    "matches": [
-      {
-        "offset": 40,
-        "phrase": "Caramail"
-      }
-    ],
-    "title": "L'histoire de Caramail (souvenirs, souvenirs...) - Arobase.org",
-    "url": "https://www.arobase.org/culture/caramail-histoire.htm"
-  },
-  {
-    "abstract": "Caramail Tchat, le chat des années 90. Un peu d'histoire. Créée en 1997, Caramail fût avant tout une messagerie mail qui se développa très rapidement en ...",
-    "matches": [
-      {
-        "offset": 0,
-        "phrase": "Caramail"
+        "offset": 50,
+        "phrase": "chocolat"
       },
       {
-        "offset": 73,
-        "phrase": "Caramail"
-      }
-    ],
-    "title": "Caramail, est-il encore possible de se connecter au tchat des ...",
-    "url": "https://www.smail.fr/chat/caramail"
-  },
-  {
-    "abstract": "Pour CaraMail, c'est le timing parfait : alors que Yahoo est empêtré dans un scandale lié à l'espionnage des emails, la société GMX relance ...",
-    "matches": [
-      {
-        "offset": 5,
-        "phrase": "CaraMail"
-      }
-    ],
-    "metadata": "6 oct. 2016",
-    "title": "CaraMail est de retour - BDM",
-    "url": "https://www.blogdumoderateur.com/caramail-de-retour/"
-  },
-  {
-    "abstract": "GMX Caramail est un service de messagerie email. Autrefois appelé simplement Caramail, le service a été racheté par l'entreprise Allemande GMX qui a ...",
-    "matches": [
-      {
-        "offset": 4,
-        "phrase": "Caramail"
+        "offset": 60,
+        "phrase": "chocolat"
       },
       {
-        "offset": 77,
-        "phrase": "Caramail"
+        "offset": 74,
+        "phrase": "chocolat"
+      },
+      {
+        "offset": 93,
+        "phrase": "chocolat"
+      },
+      {
+        "offset": 113,
+        "phrase": "chocolat"
       }
     ],
-    "title": "Télécharger GMX Caramail - 01net.com - Telecharger.com",
-    "url": "https://www.01net.com/services-en-ligne/gmx-caramail-137129/"
+    "title": "Chocolat : les meilleurs chocolats à offrir, tablettes et truffes",
+    "url": "https://www.bienmanger.com/1L185_Chocolats.html"
   },
   {
-    "abstract": "GMX (CaraMail). GMX (Global Message eXchange) est un service de messagerie gratuit d'origine allemande, créé en 1998. Les courriers que l'on y reçoit sont ...",
+    "abstract": "Découvrez l'univers chocolat avec nos assortiments, coffrets et boîtes de chocolat. Expédition en France et en Europe. Click and Collect. Livraison coursier à ...",
     "matches": [
       {
-        "offset": 5,
-        "phrase": "CaraMail"
+        "offset": 20,
+        "phrase": "chocolat"
+      },
+      {
+        "offset": 74,
+        "phrase": "chocolat"
       }
     ],
-    "title": "GMX (CaraMail) | Se connecter",
-    "url": "https://seconnecter.org/gmx"
+    "title": "Le Chocolat | Pierre Hermé Paris",
+    "url": "https://www.pierreherme.com/chocolats.html"
+  },
+  {
+    "abstract": "Découvrez nos gammes de chocolats et de confiseries de luxe. Fauchon met tout son savoir-faire chocolatier au service de votre gourmandise.",
+    "matches": [
+      {
+        "offset": 24,
+        "phrase": "chocolats"
+      }
+    ],
+    "title": "Chocolat et confiserie - Vente en ligne de boites de chocolats",
+    "url": "https://www.fauchon.com/fr/chocolat-confiserie/"
   }
 ]

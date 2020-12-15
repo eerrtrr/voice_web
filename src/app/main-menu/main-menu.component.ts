@@ -46,9 +46,8 @@ export class MainMenuComponent implements AfterViewInit{
     //little delay in order to let Googlooper
     //search on the Internet and write the result
     //inside result.json
-    console.log("start wait...");
-    this.delay(1500);
-    console.log("end wait.");
+    //(minimum 1500ms to have the correct response)
+    this.delay(1750);
 
     //get result data
     this.readData();
@@ -67,11 +66,31 @@ export class MainMenuComponent implements AfterViewInit{
   //get research result
   readData(){
     this.getJSON().subscribe(data => {
-      console.log(JSON.parse(data));
+      if(data != ""){
+        this.page_center.updateResults(data);
+      }else{
+
+        //json reading timed dout
+        console.log("Unable to get data in time.");
+        this.delay(1000);
+
+        //relaunch reading request
+        this.getJSON().subscribe(data => {
+          if(data != ""){
+            this.page_center.updateResults(data);
+          }
+
+          //no timeout relaunch
+        });
+
+      }
     });
   }
 
   public getJSON(): Observable<any>{
-    return this.http.get('../../assets/result.json', {responseType: 'text'});
+    return this.http.get(
+      '../../assets/result.json',
+      {responseType: 'text'}
+    );
   }
 }
