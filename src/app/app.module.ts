@@ -29,4 +29,5 @@ import { PageCenterComponent } from './page-center/page-center.component';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+
+export class AppModule{}

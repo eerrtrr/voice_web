@@ -65,7 +65,7 @@ export class VoiceRecognitionService {
       console.log("WebSpeechAPI > Lancement de la recherche \"" + text + "\" sur Internet.");
     }
 
-    else{
+    else if(text != ""){
       console.log("WebSpeechAPI > Commande non reconnue : \"" + text + "\".");
     }
   }

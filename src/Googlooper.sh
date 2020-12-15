@@ -2,11 +2,23 @@
 
 
 
-#get modification time
+#launch json server
+clear
+echo -e "Starting JSON server...\n"
+json-server assets/research.json &
+echo -e "\nJSON server started.\n"
+echo "Please remember to close this terminal"
+echo -e "in order to end the JSON server.\n"
+
+
+
+#get research.json modification time
 oldmodif=`stat -c '%y' assets/research.json`
 
 
 
+#Googlooper
+echo "Googlooper is running..."
 while true;
 do
 	#get modification date
@@ -14,7 +26,7 @@ do
 
 	#check if request file has been modified
 	if [[ "${newmodif}" != "${oldmodif}" ]]; then
-		echo "modification detected !"
+		echo -e "Googlooper > Modification detected !"
 		oldmodif="${newmodif}"
 
 		#read data from file
@@ -26,11 +38,13 @@ do
 
 		#get the request (between '|')
 		research=`echo "${researchLine}" | cut -d'|' -f 2`
-		echo $research
+		echo "Googlooper > Researching \"${research}\"...\n"
 
-		googler -c fr --exact --json --noprompt "${research}" > assets/result.json
+		#searching
+		googler --count 10 -c fr --exact --json --noprompt "${research}" > assets/result.json
+		echo -e "Googlooper > Research done.\n"
 	fi
 
 	#temporize
-	sleep 0.5
+	sleep 0.25
 done

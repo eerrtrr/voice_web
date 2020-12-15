@@ -7,9 +7,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageCenterComponent implements OnInit {
 
-  constructor() { }
+  //attributes
+  research = "";
 
-  ngOnInit(): void {
+
+
+  //methods
+  constructor(){}
+
+  ngOnInit(): void{}
+
+
+
+  //input search bar
+  refresh(): void{
+  	this.research = ( <HTMLInputElement>document.querySelector("#page-search-bar") ).value;
   }
 
+
+
+  //results layout
+  updateResults(): void{
+  }
 }
