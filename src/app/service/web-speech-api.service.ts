@@ -6,35 +6,67 @@ declare var webkitSpeechRecognition: any;
 @Injectable({
   providedIn: 'root'
 })
+
 export class VoiceRecognitionService {
 
-  recognition =  new webkitSpeechRecognition();
-  public text = '';
-  tempWords;
+  recognition = new webkitSpeechRecognition();
+  private sentence = "";
 
-  constructor() { }
+  constructor(){}
 
+
+
+  //recognizer
   init(){
     this.recognition.interimResults = true;
     this.recognition.lang = 'fr-FR';
+    this.recognition.continuous = false;
 
+    //create the recognition event
     this.recognition.addEventListener('result', (e) => {
-      /*const transcript = Array.from(e.results)
-        .map((result) => result[0])
-        .map((result) => result.transcript)
-        .join('');
-      this.tempWords = transcript;*/
-      console.log(e.results[0][0].transcript);
+      this.sentence = e.results[0][0].transcript;
     });
   }
 
-  start() {
+  start(){
+    //start recognition
     this.recognition.start();
-    console.log("Speech recognition started")
+
+    //when recognizer has timed out
+    this.recognition.addEventListener('end', (condition) => {
+
+      //analyse the result
+      this.analyseCommand(this.sentence);
+
+      //relaunch recognition
+      this.sentence = "";
+      this.recognition.start();
+    });
   }
 
-  wordConcat() {
-    this.text = this.text + ' ' + this.tempWords + '.';
-    this.tempWords = '';
+
+
+  //commands
+  analyseCommand(text : string){
+
+    //command help
+    if(text.includes("aide")){
+      console.log(
+        "WebSpeechAPI > Voici la liste des commandes disponibles :\n" +
+        " - aide                      : Affiche la liste des commandes disponibles.\n" +
+        " - cherche/recherche <texte> : Lance une recherche sur Internet."
+      );
+    }
+
+    //research command
+    else if(text.includes("recherche") || text.includes("cherche")){
+      //get research text
+      text = text.slice( text.indexOf("cherche")+7 );
+      console.log("WebSpeechAPI > Lancement de la recherche \"" + text + "\" sur Internet.");
+    }
+
+    else{
+      console.log("WebSpeechAPI > Commande non reconnue : \"" + text + "\".");
+    }
   }
 }
