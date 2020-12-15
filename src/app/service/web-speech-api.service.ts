@@ -59,7 +59,7 @@ export class VoiceRecognitionService {
     }
 
     //research command
-    else if(text.includes("recherche") || text.includes("cherche")){
+    else if(text.includes("cherche")){
       //get research text
       text = text.slice( text.indexOf("cherche")+7 );
       console.log("WebSpeechAPI > Lancement de la recherche \"" + text + "\" sur Internet.");

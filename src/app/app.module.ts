@@ -6,7 +6,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { InitMenuComponent } from './init-menu/init-menu.component';
 import { MainMenuComponent } from './main-menu/main-menu.component';
-import { WebResearchComponent } from './web-research/web-research.component';
 
 import { SpeechToTextComponent } from './speech-to-text/speech-to-text.component';
 import { PageLeftComponent } from './page-left/page-left.component';
@@ -18,7 +17,6 @@ import { PageCenterComponent } from './page-center/page-center.component';
     AppComponent,
     InitMenuComponent,
     MainMenuComponent,
-    WebResearchComponent,
     SpeechToTextComponent,
     PageLeftComponent,
     PageRightComponent,
