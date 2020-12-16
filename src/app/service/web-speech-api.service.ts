@@ -10,7 +10,8 @@ declare var webkitSpeechRecognition: any;
 export class VoiceRecognitionService {
 
   recognition = new webkitSpeechRecognition();
-  public sentence = "";
+  private sentence = "";
+  public finalSentence = "";
 
   constructor(){}
 
@@ -35,39 +36,12 @@ export class VoiceRecognitionService {
     //when recognizer has timed out
     this.recognition.addEventListener('end', (condition) => {
 
-      //analyse the result
-      this.analyseCommand(this.sentence);
+      //update the final sentence detected
+      this.finalSentence = this.sentence;
 
       //relaunch recognition
       this.sentence = "";
       this.recognition.start();
     });
-  }
-
-
-
-  //commands
-  analyseCommand(text : string){
-
-    //command help
-    if(text.includes("aide")){
-      console.log(
-        "WebSpeechAPI > Voici la liste des commandes disponibles :\n" +
-        " - aide                      : Affiche la liste des commandes disponibles.\n" +
-        " - cherche/recherche <texte> : Lance une recherche sur Internet."
-      );
-    }
-
-    //research command
-    else if(text.includes("cherche")){
-      //get research text
-      text = text.slice( text.indexOf("cherche")+7 );
-      console.log("WebSpeechAPI > Lancement de la recherche \"" + text + "\" sur Internet.");
-    }
-
-    //unknown command
-    else if(text != ""){
-      console.log("WebSpeechAPI > Commande non reconnue : \"" + text + "\".");
-    }
   }
 }

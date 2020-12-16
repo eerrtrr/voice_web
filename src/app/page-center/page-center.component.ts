@@ -8,20 +8,15 @@ import { Component, OnInit } from '@angular/core';
 export class PageCenterComponent implements OnInit {
 
   //attributes
-  research = "";
+  public searchBar: HTMLInputElement;
 
 
 
   //methods
   constructor(){}
 
-  ngOnInit(): void{}
-
-
-
-  //input search bar
-  refresh(): void{
-  	this.research = ( <HTMLInputElement>document.querySelector("#page-search-bar") ).value;
+  ngOnInit(): void{
+    this.searchBar = <HTMLInputElement>( document.querySelector("#page-search-bar") );
   }
 
 
@@ -50,7 +45,6 @@ export class PageCenterComponent implements OnInit {
   		resultElement.innerHTML += "<span class=\"section-text\">" + sections[s]["abstract"] + "</span>\n";
   		resultElement.innerHTML += "</div>\n";
   		resultElement.innerHTML += "<br>\n\n";
-		  console.log(sections[s]["url"]);
   	}
   }
 }

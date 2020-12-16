@@ -4,7 +4,7 @@
 
 #launch json server
 clear
-echo -e "Starting JSON server...\n"
+echo "Starting JSON server..."
 json-server assets/research.json &
 echo -e "\nJSON server started.\n"
 echo "Please remember to close this terminal"

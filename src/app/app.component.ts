@@ -17,8 +17,6 @@ export class AppComponent{
 
 	updateInitBtnState(state : boolean){
 		this.initBtnState = state;
-		console.log("Init button pressed !");
-
 		this.initHidden = true;
 	}
 }

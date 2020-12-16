@@ -5,6 +5,7 @@ import { PageCenterComponent } from '../page-center/page-center.component';
 import { VoiceRecognitionService } from '../service/web-speech-api.service';
 
 
+
 @Component({
   selector: 'main-menu',
   templateUrl: './main-menu.component.html',
@@ -24,6 +25,10 @@ export class MainMenuComponent implements AfterViewInit{
   data: string;
   baseURL: string = "http://localhost:3000/research/1";
 
+  //Jarvis
+  private JarvisText;
+  private pause: boolean = false;
+
 
 
 	//methods
@@ -32,7 +37,9 @@ export class MainMenuComponent implements AfterViewInit{
     this.voiceRecognizer.start();
    }
 
-  ngAfterViewInit(){}
+  ngAfterViewInit(){
+    this.JarvisText = document.querySelector("#JarvisText");
+  }
 
 
 
@@ -40,9 +47,104 @@ export class MainMenuComponent implements AfterViewInit{
   private mainLoop = setInterval(
     () => {
       //check service
-      console.log("sentence[" + this.voiceRecognizer.sentence + "]");
+      this.analyseCommand(this.voiceRecognizer.finalSentence);
     }, 10
   );
+
+
+
+  //Jarvis speech
+  speak(text: string): void{
+    this.JarvisText.innerHTML = text;
+  }
+
+
+
+  //commands
+  analyseCommand(text : string){
+
+    //if in pause
+    if(this.pause){
+      //resume pause
+      if(text.includes("Jarvis")){
+        this.pause = false;
+        this.speak("Jarvis > Oui Monsieur, je suis à vous.");
+      }
+    }
+
+    //other commands
+    else{
+      //command help
+      if(text.includes("aide")){
+        this.speak(
+          "Jarvis > Voici la liste des commandes disponibles Monsieur :\n" +
+          " - aide                      : Affiche la liste des commandes disponibles.\n" +
+          " - cherche/recherche <texte> : Lance une recherche sur Internet." +
+          " - pause/stop/arrêt          : Met en pause mes services jusqu'à votre prochain appel."
+        );
+      }
+
+      //research command
+      else if(text.includes("cherche")){
+        
+        //get research text
+        text = text.slice( text.indexOf("cherche")+7 ).trim();
+        
+        //incorrect research
+        if(text === ""){
+          this.speak("Jarvis > Vous n'avez rien demandé à rechercher Monsieur.");
+        }
+
+        //launch research
+        else{
+          this.speak("Jarvis > Voici les résultats sur la recherche \"" + text + "\" Monsieur.");
+          this.page_center.searchBar.value = text;
+          this.sendData(text);
+        }
+      }
+
+      //thank you command
+      else if(text.includes("merci")){
+          this.speak("Jarvis > Mais de rien Monsieur, c'est un honneur de vous servir.");
+      }
+
+      //Jarvis command
+      else if(text.includes("Jarvis")){
+          this.speak("Jarvis > Je suis là Monsieur. En quoi puis-je vous servir ?");
+      }
+
+      //rock paper scissors
+      else if(
+        (
+          text.includes("pierre") && (text.includes("feuille") || text.includes("papier")) && text.includes("ciseaux")
+        ) ||
+        text.includes("chifoumi")
+      ){
+          this.speak("Jarvis > Très bien, jouons à pierre feuille ciseaux.");
+      }
+
+      //pause command
+      else if(
+        text.includes("pause") ||
+        text.includes("stop") ||
+        text.includes("arrêt")
+      ){
+        this.pause = true;
+        this.speak(
+          "Jarvis > Très bien, je vous laisse tranquille Monsieur.\n" +
+          "Appelez-moi quand vous aurez besoin de moi à nouveau."
+        );
+      }
+
+      //unknown command
+      else if(text != ""){
+        this.speak("Jarvis > Commande non reconnue : \"" + text + "\".");
+      }
+    }
+
+    //reset finalSentence
+    this.voiceRecognizer.finalSentence = "";
+  }
 
 
 
@@ -55,8 +157,8 @@ export class MainMenuComponent implements AfterViewInit{
 
 
   //send research query
-  sendData(){
-    this.setJSON().subscribe(data => {});
+  sendData(text: string){
+    this.setJSON(text).subscribe(data => {});
 
     //little delay in order to let Googlooper
     //search on the Internet and write the result
@@ -68,10 +170,10 @@ export class MainMenuComponent implements AfterViewInit{
     this.readData();
   }
 
-  public setJSON(): Observable<any>{
+  public setJSON(text: string): Observable<any>{
     return this.http.put(
       this.baseURL,
-      "{\"name\":\"|" + this.page_center.research + "|\"}",
+      "{\"name\":\"|" + text + "|\"}",
       {'headers': {'content-type':'application/json'}}
     );
   }
@@ -86,7 +188,6 @@ export class MainMenuComponent implements AfterViewInit{
       }else{
 
         //json reading timed dout
-        console.log("Unable to get data in time.");
         this.delay(1000);
 
         //relaunch reading request
