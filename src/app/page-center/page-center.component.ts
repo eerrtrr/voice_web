@@ -39,18 +39,18 @@ export class PageCenterComponent implements OnInit {
   	var separationIndex = 0;
   	var url2 = "";
   	for(var s=0; s < sections.length; s++){
-  		url1 = (<Object>sections[s]).url.slice( (<Object>sections[s]).url.indexOf("//")+2);
+  		url1 = sections[s]["url"].slice( sections[s]["url"].indexOf("//")+2);
   		separationIndex = url1.indexOf("/");
   		url2 = url1.slice(separationIndex);
   		url1 = url1.slice(0, separationIndex);
   		resultElement.innerHTML += "<div class=\"page-section\">\n";
-		resultElement.innerHTML += "<span class=\"section-url1\">" + url1 + "</span>\n";
-		resultElement.innerHTML += "<span class=\"section-url2\"> > " + url2 + "</span><br>\n";
-		resultElement.innerHTML += "<a class=\"section-link\" href=\"" + (<Object>sections[s]).url + "\">" + (<Object>sections[s]).title + "</a><br>\n";
-		resultElement.innerHTML += "<span class=\"section-text\">" + (<Object>sections[s]).abstract + "</span>\n";
-		resultElement.innerHTML += "</div>\n";
-		resultElement.innerHTML += "<br>\n\n";
-		console.log(sections[s].url);
+  		resultElement.innerHTML += "<span class=\"section-url1\">" + url1 + "</span>\n";
+  		resultElement.innerHTML += "<span class=\"section-url2\"> > " + url2 + "</span><br>\n";
+  		resultElement.innerHTML += "<a class=\"section-link\" href=\"" + sections[s]["url"] + "\">" + sections[s]["title"] + "</a><br>\n";
+  		resultElement.innerHTML += "<span class=\"section-text\">" + sections[s]["abstract"] + "</span>\n";
+  		resultElement.innerHTML += "</div>\n";
+  		resultElement.innerHTML += "<br>\n\n";
+		  console.log(sections[s]["url"]);
   	}
   }
 }

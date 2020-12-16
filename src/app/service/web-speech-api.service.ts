@@ -10,7 +10,7 @@ declare var webkitSpeechRecognition: any;
 export class VoiceRecognitionService {
 
   recognition = new webkitSpeechRecognition();
-  private sentence = "";
+  public sentence = "";
 
   constructor(){}
 
@@ -65,6 +65,7 @@ export class VoiceRecognitionService {
       console.log("WebSpeechAPI > Lancement de la recherche \"" + text + "\" sur Internet.");
     }
 
+    //unknown command
     else if(text != ""){
       console.log("WebSpeechAPI > Commande non reconnue : \"" + text + "\".");
     }

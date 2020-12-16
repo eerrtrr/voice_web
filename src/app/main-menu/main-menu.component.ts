@@ -2,6 +2,7 @@ import { Component, Input, ViewChild, AfterViewInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, timer } from 'rxjs';
 import { PageCenterComponent } from '../page-center/page-center.component';
+import { VoiceRecognitionService } from '../service/web-speech-api.service';
 
 
 @Component({
@@ -25,9 +26,19 @@ export class MainMenuComponent implements AfterViewInit{
 
 
 	//methods
-	constructor(private http: HttpClient){}
+	constructor(private http: HttpClient, private voiceRecognizer: VoiceRecognitionService){}
 
   ngAfterViewInit(){}
+
+
+
+  //main loop
+  private mainLoop = setInterval(
+    () => {
+      //check service
+      console.log("sentence[" + this.voiceRecognizer.sentence + "]");
+    }, 10
+  );
 
 
 

@@ -1,5 +1,4 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { VoiceRecognitionService } from '../service/web-speech-api.service';
 
 
 @Component({
@@ -19,6 +18,5 @@ export class InitMenuComponent{
 
 	goToMainMenu(): void{
 		this.btnPressed.emit(true);
-		
 	}
 }
