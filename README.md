@@ -8,13 +8,27 @@
 
 ## Required
 
- - **npm/nodejs**
- You need to have nodejs and npm to hopefully see one day this project works.
- For **Mac & Windows**, just download nodejs installer  (search on the internet).
- For **Linux OS**, the npm package is enough to install both. (`sudo apt install npm` for ubuntu for exemple).
+ - **Linux Operating System**
+ This project is only available on linux for the moment.
+ It requires some packages so make sure you have it all before running the program.
+
  &nbsp;
- - **Angular**
-The end will entirely be with you cmd/terminal. Open it and simply type `sudo npm install -g @angular/cli`. Angular and its tools will automatically be installed!
+ - **Package : npm/nodejs**
+ You need to have nodejs and npm to hopefully see one day this project works.
+ The npm package is enough to install both.
+ `sudo apt install npm` for apt systems.
+
+ &nbsp;
+ - **Package : Angular**
+ Install it via your terminal : `sudo npm install -g @angular/cli`.
+
+ &nbsp;
+ - **Package : JSON server**
+ Install it via your terminal : `sudo npm install -g json-server`.
+
+ &nbsp;
+ - **Package : Googler**
+ Install it via your terminal : `sudo apt install googler` for apt systems.
 
 **I recommend you to restart you pc after that, lots of packages have been installed**
 &nbsp;
@@ -24,19 +38,28 @@ The end will entirely be with you cmd/terminal. Open it and simply type `sudo np
 
  - **Create Angular folder**
  Go into a folder where you want to keep the project with angular.
- Select your preferred way to change you terminal directory into this folder.
- Then type `ng new "folder-name"`, replace folder-name with what you want.
- A bunch of things will be displayed, choose **yes** for angular routine and **css** for stylesheet format.
- That's all! You just create your main folder.
+ Open a terminal and then type `ng new "folder-name"`, replace "folder-name" with the name you want.
+ A bunch of things will be displayed,
+ - Choose **yes** for angular routine
+ - Choose **css** for stylesheet format
+ That's all! You've just created your main folder.
+
   &nbsp;
  - **Build the project**
- With you terminal go into the folder that you've just created.
- Remove the folder src.
+ Go into your main folder and remove the folder "src".
  Take all the files you have just downloaded from the repository and paste them here.
- Then type into your terminal `ng serve --no-live-reload --open`.
+ You will be asked to replace some files, just say **yes**.
+ (The src folder replaces the one you've just deleted).
+ Your project is now built.
+
+  &nbsp;
+ - **Run the project**
+ Open a terminal into your main folder.
+ Then type command `./run`.
+ The project is running.
  Angular will compile the project and open your favorite web browser to show you the future.
  &nbsp;
- 
+
  &nbsp;
  
  ***Hope you will like this project, thanks for testing!***
