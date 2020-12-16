@@ -8,7 +8,8 @@ import { VoiceRecognitionService } from '../service/web-speech-api.service';
 @Component({
   selector: 'main-menu',
   templateUrl: './main-menu.component.html',
-  styleUrls: ['./main-menu.component.css']
+  styleUrls: ['./main-menu.component.css'],
+  providers: [VoiceRecognitionService]
 })
 
 export class MainMenuComponent implements AfterViewInit{
@@ -26,7 +27,10 @@ export class MainMenuComponent implements AfterViewInit{
 
 
 	//methods
-	constructor(private http: HttpClient, private voiceRecognizer: VoiceRecognitionService){}
+  constructor(private http: HttpClient, public voiceRecognizer : VoiceRecognitionService){ 
+    this.voiceRecognizer.init();
+    this.voiceRecognizer.start();
+   }
 
   ngAfterViewInit(){}
 

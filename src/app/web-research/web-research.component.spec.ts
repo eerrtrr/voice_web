@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SpeechToTextComponent } from './speech-to-text.component';
+import { WebResearchComponent } from './web-research.component';
 
-describe('SpeechToTextComponent', () => {
-  let component: SpeechToTextComponent;
-  let fixture: ComponentFixture<SpeechToTextComponent>;
+describe('WebResearchComponent', () => {
+  let component: WebResearchComponent;
+  let fixture: ComponentFixture<WebResearchComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SpeechToTextComponent ]
+      declarations: [ WebResearchComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SpeechToTextComponent);
+    fixture = TestBed.createComponent(WebResearchComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

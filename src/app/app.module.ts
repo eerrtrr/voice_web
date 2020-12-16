@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { InitMenuComponent } from './init-menu/init-menu.component';
 import { MainMenuComponent } from './main-menu/main-menu.component';
 
-import { SpeechToTextComponent } from './speech-to-text/speech-to-text.component';
 import { PageLeftComponent } from './page-left/page-left.component';
 import { PageRightComponent } from './page-right/page-right.component';
 import { PageCenterComponent } from './page-center/page-center.component';
@@ -17,7 +16,6 @@ import { PageCenterComponent } from './page-center/page-center.component';
     AppComponent,
     InitMenuComponent,
     MainMenuComponent,
-    SpeechToTextComponent,
     PageLeftComponent,
     PageRightComponent,
     PageCenterComponent
