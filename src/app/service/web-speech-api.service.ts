@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 
 
 declare var webkitSpeechRecognition: any;
+declare var SpeechSynthesisUtterance: any;
+
 
 @Injectable({
   providedIn: 'root'
@@ -43,5 +45,27 @@ export class VoiceRecognitionService {
       this.sentence = "";
       this.recognition.start();
     });
+  }
+}
+
+
+
+export class VoiceSynthetizerService{
+
+  speechSynthesizer!: SpeechSynthesisUtterance;
+
+  constructor(){}
+
+  initSynthesis(): void {
+    this.speechSynthesizer = new SpeechSynthesisUtterance();
+    this.speechSynthesizer.volume = 1;
+    this.speechSynthesizer.rate = 1.1;
+    this.speechSynthesizer.pitch = 0.7;
+  }
+
+  speak(message: string): void {
+    this.speechSynthesizer.lang = "fr";
+    this.speechSynthesizer.text = message;
+    speechSynthesis.speak(this.speechSynthesizer);
   }
 }
