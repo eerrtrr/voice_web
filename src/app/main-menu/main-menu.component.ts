@@ -28,12 +28,16 @@ export class MainMenuComponent implements AfterViewInit{
 
   //Jarvis
   private JarvisText;
-  private pause: boolean = false;
+  private pause: boolean = true;
 
 
 
 	//methods
-  constructor(private http: HttpClient, public voiceRecognizer: VoiceRecognitionService, public voiceSynthetizer: VoiceSynthetizerService){ 
+  constructor(
+    private http: HttpClient,
+    public voiceRecognizer: VoiceRecognitionService,
+    public voiceSynthetizer: VoiceSynthetizerService
+  ){ 
     this.voiceRecognizer.init();
     this.voiceRecognizer.start();
 
@@ -45,21 +49,22 @@ export class MainMenuComponent implements AfterViewInit{
   }
 
 
-  neutralSentance(str: string): string{
+
+  neutralSentence(str: string): string{
     var accent = [
         /[\300-\306]/g, /[\340-\346]/g, // A, a
         /[\310-\313]/g, /[\350-\353]/g, // E, e
         /[\314-\317]/g, /[\354-\357]/g, // I, i
         /[\322-\330]/g, /[\362-\370]/g, // O, o
         /[\331-\334]/g, /[\371-\374]/g, // U, u
-        /[\307]/g, /[\347]/g, // C, c
+             /[\307]/g,      /[\347]/g  // C, c
     ];
     var noaccent = ['A','a','E','e','I','i','O','o','U','u','C','c'];
 
     for(var i = 0; i < accent.length; i++){
         str = str.replace(accent[i], noaccent[i]);
     }
-     
+
     return str;
   }
 
@@ -87,6 +92,7 @@ export class MainMenuComponent implements AfterViewInit{
 
     //if in pause
     if(this.pause){
+
       //resume pause
       if(text.includes("Jarvis")){
         this.pause = false;
@@ -130,7 +136,7 @@ export class MainMenuComponent implements AfterViewInit{
           this.speak("Jarvis > Voici les résultats sur la recherche \"" + text + "\" Monsieur.");
           this.voiceSynthetizer.speak("Voici les résultats sur la recherche \"" + text + "\" Monsieur.");
           this.page_center.searchBar.value = text;
-          this.sendData(this.neutralSentance(text));
+          this.sendData(this.neutralSentence(text));
         }
       }
 

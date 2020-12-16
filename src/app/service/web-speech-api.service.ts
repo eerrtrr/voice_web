@@ -53,6 +53,7 @@ export class VoiceRecognitionService {
 export class VoiceSynthetizerService{
 
   speechSynthesizer!: SpeechSynthesisUtterance;
+  isSynthesizing: boolean = false;
 
   constructor(){}
 
@@ -60,12 +61,14 @@ export class VoiceSynthetizerService{
     this.speechSynthesizer = new SpeechSynthesisUtterance();
     this.speechSynthesizer.volume = 1;
     this.speechSynthesizer.rate = 1.1;
-    this.speechSynthesizer.pitch = 0.7;
+    this.speechSynthesizer.pitch = 0.5;
   }
 
   speak(message: string): void {
     this.speechSynthesizer.lang = "fr";
     this.speechSynthesizer.text = message;
+    console.log("start");
     speechSynthesis.speak(this.speechSynthesizer);
+    console.log("end");
   }
 }

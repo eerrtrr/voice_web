@@ -27,8 +27,9 @@
  Install it via your terminal : `sudo npm install -g json-server`.
 
  &nbsp;
- - **Package : Googler**
- Install it via your terminal : `sudo apt install googler` for apt systems.
+ - **Program : Googler**
+ Install it via the GitHub repository : `https://github.com/jarun/googler`.
+ DON'T INSTALL IT VIA APT, IT MAY NOT WORK WELL !
 
 **I recommend you to restart you pc after that, lots of packages have been installed**
 &nbsp;

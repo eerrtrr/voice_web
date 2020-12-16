@@ -38,7 +38,7 @@ do
 
 		#get the request (between '|')
 		research=`echo "${researchLine}" | cut -d'|' -f 2`
-		echo "Googlooper > Researching \"${research}\"...\n"
+		echo "Googlooper > Researching \"${research}\"..."
 
 		#searching
 		googler --count 10 -c fr --exact --json --noprompt "${research}" > assets/result.json

@@ -16,27 +16,3 @@
 	height: 87%;
 	overflow: scroll;
 }
-
-
-/* sections */
-.section-url1{
-	font-size: 20px;
-	font-weight: bold;
-	color: rgba(  0,  0,  0, 1);
-}
-
-.section-url2{
-	font-size: 20px;
-	color: rgba( 80, 80, 80, 1);
-}
-
-.section-link{
-	font-size: 25px;
-	color: rgba(  0,  0,255, 1);
-}
-
-.section-text{
-	font-size: 20px;
-	font-style: italic;
-	color: rgba( 80, 80, 80, 0.8);
-}
