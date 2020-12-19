@@ -1,106 +1,87 @@
 [
   {
-    "abstract": "",
-    "title": "Carte - Géoportail",
-    "url": "https://www.geoportail.gouv.fr/carte"
-  },
-  {
-    "abstract": "Cartes, plans de ville, des rues et des quartiers, la carte de France et la carte du monde. Les cartes routières MICHELIN, cartes satellites, hybrides ou allégées.",
+    "abstract": "Iron Man est un film américain réalisé par Jon Favreau, sorti en 2008. Il raconte les origines et les débuts du personnage éponyme issu du comics publié par ...",
     "matches": [
       {
         "offset": 0,
-        "phrase": "Cartes"
-      },
-      {
-        "offset": 54,
-        "phrase": "carte"
-      },
-      {
-        "offset": 76,
-        "phrase": "carte"
-      },
-      {
-        "offset": 96,
-        "phrase": "cartes"
-      },
-      {
-        "offset": 123,
-        "phrase": "cartes"
+        "phrase": "Iron Man"
       }
     ],
-    "title": "Cartes, plans de ville, cartes routières - ViaMichelin",
-    "url": "https://www.viamichelin.fr/web/Cartes-plans"
+    "metadata": "Pays d’origine : États-Unis | Genre : super-héros | Sociétés de production : Marvel Studios; Fairvi... | Durée : 126 minutes",
+    "title": "Iron Man (film) — Wikipédia",
+    "url": "https://fr.wikipedia.org/wiki/Iron_Man_(film)"
   },
   {
-    "abstract": "Calcul d'itinéraire, cartes MICHELIN, info trafic en temps réel, réservation d'hôtels en France et en Europe.",
+    "abstract": "Anthony « Tony » Stark, alias Iron Man ( litt. « l'Homme de fer ») est un super-héros évoluant dans l'univers Marvel de la maison d'édition Marvel Comics.",
     "matches": [
       {
-        "offset": 21,
-        "phrase": "cartes"
+        "offset": 30,
+        "phrase": "Iron Man"
       }
     ],
-    "title": "ViaMichelin : Itinéraires, Cartes, Info trafic, Hôtels",
-    "url": "https://www.viamichelin.fr/"
+    "metadata": "Origine : États-Unis | Naissance : Long Island, État de New York, Éta... | Ennemi de : (entre autres) la Dynamo pourpre, le ... | Caractéristique : Génie scientifique, brillant inv...",
+    "title": "Iron Man (comics) — Wikipédia",
+    "url": "https://fr.wikipedia.org/wiki/Iron_Man_(comics)"
   },
   {
-    "abstract": "Recherche d'adresses, de lieux, comparateur d' itinéraires pour préparer vos déplacements partout en France.",
-    "title": "Mappy - Plans, comparateur d'itinéraires et cartes de France",
-    "url": "https://fr.mappy.com/"
-  },
-  {
-    "abstract": "",
-    "metadata": "Une carte géographique est une représentation d'un espace géographique. Elle met en valeur l'étendue de cet espace, sa localisation relative par rapport aux ...",
-    "title": "Carte géographique — Wikipédia",
-    "url": "https://fr.wikipedia.org/wiki/Carte_g%C3%A9ographique"
-  },
-  {
-    "abstract": "« Cartes » redirige ici. Pour la commune espagnole, voir Cartes (Cantabrie). Sur les autres projets Wikimedia : Carte, sur le Wiktionnaire ...",
+    "abstract": "Iron Man est un film réalisé par Jon Favreau avec Robert Downey Jr., Terrence Howard. Synopsis : Tony Stark, inventeur de génie, vendeur d'armes et playboy ...",
     "matches": [
       {
-        "offset": 2,
-        "phrase": "Cartes"
-      },
-      {
-        "offset": 57,
-        "phrase": "Cartes"
-      },
-      {
-        "offset": 112,
-        "phrase": "Carte"
+        "offset": 0,
+        "phrase": "Iron Man"
       }
     ],
-    "title": "Carte — Wikipédia",
-    "url": "https://fr.wikipedia.org/wiki/Carte"
+    "metadata": "Note : 4 · 54 252 votes",
+    "title": "Iron Man - film 2008 - AlloCiné",
+    "url": "https://www.allocine.fr/film/fichefilm_gen_cfilm=53751.html"
   },
   {
-    "abstract": "",
-    "metadata": "Pour les commandes de CARTES EN RELIEF et CARTE A LA CARTE jusqu'au jeudi 17 décembre et pour les autres commandes jusqu'au dimanche 20 ...",
-    "title": "Cartes IGN : Cartes personnalisées - IGN Rando",
-    "url": "https://ignrando.fr/boutique/carte-a-la-carte.html"
-  },
-  {
-    "abstract": "Pour les commandes de CARTES EN RELIEF et CARTE A LA CARTE jusqu'au jeudi 17 décembre et pour les autres commandes jusqu'au dimanche 20 ...",
+    "abstract": "Encylopédie - Iron-Man. Encylopédie. iron-man_0.jpg. Véritable nom : Anthony Edward « Tony » Stark. Profession : Aventurier, PDG de Stark Resistance, de ...",
     "matches": [
       {
-        "offset": 22,
-        "phrase": "CARTES"
+        "offset": 14,
+        "phrase": "Iron"
       },
       {
-        "offset": 42,
-        "phrase": "CARTE"
-      },
-      {
-        "offset": 53,
-        "phrase": "CARTE"
+        "offset": 19,
+        "phrase": "Man"
       }
     ],
-    "title": "Carte à la Carte : Cartes IGN - Cartes personnalisées TOP25 ...",
-    "url": "https://ignrando.fr/boutique/carte-a-la-carte/carte-personnalisee-ign.html"
+    "title": "Encylopédie - Iron-Man - Marvel-World.com",
+    "url": "http://www.marvel-world.com/encyclopedie-51-fiche-iron-man-biographie.html"
   },
   {
-    "abstract": "",
-    "metadata": "Cartes de voyage & cartes de randonnée pour toute la planète, par le spécialiste français du voyage et des produits géographiques. Plus de 14500 cartes et ...",
-    "title": "La Compagnie des Cartes",
-    "url": "https://lacompagniedescartes.fr/"
+    "abstract": "\"Je suis Iron Man.\"—Tony StarkAnthony \"Tony\" Edward Stark était uninventeur,playboy et homme...",
+    "matches": [
+      {
+        "offset": 9,
+        "phrase": "Iron Man"
+      }
+    ],
+    "title": "Iron Man | Wiki Univers Cinématographique Marvel | Fandom",
+    "url": "https://universcinematographiquemarvel.fandom.com/fr/wiki/Iron_Man"
+  },
+  {
+    "abstract": "Amazon's Choice Articles ayant le badge Amazon's Choice pour... \"iron man\" ...",
+    "matches": [
+      {
+        "offset": 65,
+        "phrase": "iron man"
+      }
+    ],
+    "title": "iron man - Amazon.fr",
+    "url": "https://www.amazon.fr/iron-man/s?k=iron+man&af=%7B%22quartzVehicle%22%3A%2269-1712%22%2C%22replacementKeywords%22%3A%22iron%22%7D"
+  },
+  {
+    "abstract": "Tony Stark, inventeur de génie, vendeur d'armes et playboy milliardaire, est kidnappé en Afghanistan. Forcé par ...",
+    "metadata": "22 sept. 2015 · Ajouté par Marvel Fr",
+    "title": "Iron Man (film) | Marvel CinéVerse",
+    "url": "http://www.marvel-cineverse.fr/pages/mcu/films/phase-1/iron-man/"
+  },
+  {
+    "abstract": "Directed by Jon Favreau. With Robert Downey Jr., Gwyneth Paltrow, Terrence Howard, Jeff Bridges. After being held captive in an Afghan cave, billionaire ...",
+    "metadata": "Release Date : 2 May 2008 (USA) | Runtime : 126 min | Director : Jon Favreau | Production Co : Paramount Pictures, Marvel En...",
+    "title": "Iron Man (2008) - IMDb",
+    "url": "https://www.imdb.com/title/tt0371746/"
   }
 ]

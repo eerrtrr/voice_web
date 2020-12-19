@@ -8,8 +8,11 @@ import { Component, OnInit } from '@angular/core';
 
 export class PageCenterComponent implements OnInit {
 
-  //attributes
+  //search bar
   public searchBar: HTMLInputElement;
+
+  //results
+  public results: string = "";
 
 
 
@@ -17,17 +20,25 @@ export class PageCenterComponent implements OnInit {
   constructor(){}
 
   ngOnInit(): void{
-    this.searchBar = <HTMLInputElement>( document.querySelector("#page-search-bar") );
+    this.searchBar = <HTMLInputElement>( document.querySelector("#center-search-bar") );
   }
 
 
 
   //results layout
-  updateResults(sections: string): void{
-    sections = JSON.parse(sections);
+  updateResults(): void{
 
-    //reset results
+    //get results
     var resultElement = document.querySelector("#center-results");
+
+    //empty case
+    if(this.results == ""){
+      resultElement.innerHTML = "<div>Pas de résultat à afficher pour l'instant.</div>";
+      return;
+    }
+
+    //not empty case
+    var sections = JSON.parse(this.results);
 
     //add style element
     resultElement.innerHTML =

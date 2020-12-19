@@ -2,6 +2,8 @@ import { Component, Input, ViewChild, AfterViewInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, timer } from 'rxjs';
 import { PageCenterComponent } from '../page-center/page-center.component';
+import { PageLeftComponent } from '../page-left/page-left.component';
+import { PageRightComponent } from '../page-right/page-right.component';
 import { VoiceRecognitionService } from '../service/web-speech-api.service';
 import { VoiceSynthetizerService } from '../service/web-speech-api.service';
 
@@ -21,16 +23,23 @@ export class MainMenuComponent implements AfterViewInit{
 
   //page-center search bar
   @ViewChild(PageCenterComponent) page_center: PageCenterComponent;
+  @ViewChild(PageLeftComponent) page_left: PageLeftComponent;
+  @ViewChild(PageRightComponent) page_right: PageRightComponent;
 
   //json server
   data: string;
   baseURL: string = "http://localhost:3000/research/1";
 
-  //Jarvis
-  private JarvisText;
+  //Pepper
+  private PepperText;
   private pause: boolean = true;
   private synthetizerIsSpeaking: boolean = false;
-  private jeu: string[] = ["Pierre", "Feuille", "Papier", "Ciseaux"];
+  private jeu: string[] = ["Pierre", "Feuille", "Ciseaux"];
+
+
+
+
+
 
 	//methods
   constructor(
@@ -45,7 +54,7 @@ export class MainMenuComponent implements AfterViewInit{
    }
 
   ngAfterViewInit(){
-    this.JarvisText = document.querySelector("#JarvisText");
+    this.PepperText = document.querySelector("#PepperText");
   }
 
 
@@ -80,9 +89,9 @@ export class MainMenuComponent implements AfterViewInit{
 
 
 
-  //Jarvis speech
+  //Pepper speech
   speak(text: string): void{
-    this.JarvisText.innerHTML = "Jarvis > " + text;
+    this.PepperText.innerHTML = "Pepper > " + text.split('\n').join("<br>");
     this.voiceSynthetizer.speak(text);
     this.voiceRecognizer.synthetizerIsSpeaking = true;
   }
@@ -92,7 +101,7 @@ export class MainMenuComponent implements AfterViewInit{
   //commands
   analyseCommand(text : string){
 
-    //if Jarvis just spoke
+    //if Pepper just spoke
     if(text != "" && this.voiceRecognizer.synthetizerIsSpeaking){
       text = "";
     }
@@ -101,7 +110,7 @@ export class MainMenuComponent implements AfterViewInit{
     else if(this.pause){
 
       //resume pause
-      if(text.includes("Jarvis")){
+      if(text.includes("pepper")){
         this.pause = false;
         this.speak("Oui Monsieur, je suis à vous.");
       }
@@ -109,19 +118,10 @@ export class MainMenuComponent implements AfterViewInit{
 
     //other commands
     else{
-      //command help
-      if(text.includes("aide")){
-        this.speak(
-          "Voici la liste des commandes disponibles Monsieur :\n" +
-          " - aide                      : Affiche la liste des commandes disponibles.\n" +
-          " - cherche/recherche <texte> : Lance une recherche sur Internet." +
-          " - pause/stop/arrêt          : Met en pause mes services jusqu'à votre prochain appel."
-        );
-      }
 
-      //research command
-      else if(text.includes("cherche")){
-        
+      //research something
+      if(text.includes("cherche")){
+
         //get research text
         if(text.includes("chercher"))
           text = text.slice( text.indexOf("chercher")+8 ).trim();
@@ -134,10 +134,25 @@ export class MainMenuComponent implements AfterViewInit{
 
         if(text.includes("s'il te plaît"))
           text = text.slice( 0, text.indexOf("s'il")-1).trim();
-        
+
         //incorrect research
         if(text === ""){
-          this.speak("Vous n'avez rien demandé à rechercher Monsieur.");
+          switch(this.getRandomInt(3)){
+            case 0:
+              this.speak("Vous n'avez rien demandé à rechercher Monsieur.");
+            break;
+
+            case 1:
+              this.speak("Il me faut plus de détails Monsieur.");
+            break;
+
+            case 2:
+              this.speak("Que voulez-vous rechercher Monsieur ?");
+            break;
+
+            default:
+            break;
+          }
         }
 
         //launch research
@@ -148,70 +163,406 @@ export class MainMenuComponent implements AfterViewInit{
         }
       }
 
-      //thank you command
-      else if(text.includes("merci")){
-          this.speak("Mais de rien Monsieur, c'est un honneur de vous servir.");
+      //help
+      else if(
+        text.includes("aide") ||
+        text.includes("comment ça marche")
+      ){
+        console.log(
+          "Voici le genre de phrases que je comprends Monsieur :\n" +
+          " - Aide-moi.\n" +
+          " - Recherche quelque-chose.\n" +
+          " - Mets-moi sur la fenêtre de gauche s'il te plait.\n" +
+          " - Transfère moi à droite plutôt.\n" +
+          " - Merci.\n" +
+          " - Cool.\n" +
+          " - Ça va ?\n" +
+          " - Salut.\n" +
+          " - Pepper ?.\n" +
+          " - On se fait un Pierre feuille ciseaux ?\n" +
+          " - Désolé.\n" +
+          " - Pas toi rhooo.\n" +
+          " - Ça m'énerve !\n" +
+          " - Arrête de parler."
+        );
+        this.speak(
+          "Je vous ai écrit la liste des demandes auquelles je peux répondre dans la console.\n" +
+          "Ces exemples ne sont pas à prononcer à la lettre.\n" +
+          "Vous pouvez me parler normalement et je ferai mon possible pour vous répondre Monsieur."
+        );
       }
 
-      //cool command
+      //go to left page
+      else if(text.includes("gauche")){
+        this.speak("Je vous transfère sur l'onglet à votre gauche Monsieur.");
+
+        //swap search bars
+        var center_searchBarText = this.page_center.searchBar.value;
+        this.page_center.searchBar.value = this.page_left.searchBar.value;
+        this.page_left.searchBar.value = center_searchBarText;
+
+        //swap results
+        var center_results = this.page_center.results;
+        this.page_center.results = this.page_left.results;
+        this.page_left.results = center_results;
+
+        //update results on both pages
+        this.page_left.updateResults();
+        this.page_center.updateResults();
+      }
+
+      //go to right page
+      else if(text.includes("droite")){
+        this.speak("Je vous transfère sur l'onglet à votre droite Monsieur.");
+
+        //swap search bars
+        var center_searchBarText = this.page_center.searchBar.value;
+        this.page_center.searchBar.value = this.page_right.searchBar.value;
+        this.page_right.searchBar.value = center_searchBarText;
+
+        //swap results
+        var center_results = this.page_center.results;
+        this.page_center.results = this.page_right.results;
+        this.page_right.results = center_results;
+
+        //update results on both pages
+        this.page_right.updateResults();
+        this.page_center.updateResults();
+      }
+
+      //thank you
+      else if(
+        text.includes("merci") ||
+        text.includes("c'est gentil") ||
+        text.includes("sympa")
+      ){
+        switch(this.getRandomInt(3)){
+          case 0:
+            this.speak("C'est bien normal Monsieur.");
+          break;
+
+          case 1:
+            this.speak("Mais de rien Monsieur.");
+          break;
+
+          case 2:
+            this.speak("C'est tout naturel Monsieur.");
+          break;
+
+          default:
+          break;
+        }
+      }
+
+      //cool, great !
       else if(
         text.includes("cool") || 
-        text.includes("Cool")
+        text.includes("Cool") ||
+        text.includes("super") || 
+        text.includes("génial") ||
+        text.includes("bravo")
       ){
-          this.speak("Ravie que cela vous plaise.");
+        switch(this.getRandomInt(3)){
+          case 0:
+            this.speak("Ravie que cela vous plaise Monsieur.");
+          break;
+
+          case 1:
+            this.speak("Vous m'en voyez flattée Monsieur.");
+          break;
+
+          case 2:
+            this.speak("Merci Monsieur.");
+          break;
+
+          default:
+          break;
+        }
       }
 
-      //How are you command
+      //How are you ?
       else if(
         text.includes("ça va") ||
-        text.includes("et toi")
+        text.includes("et toi") ||
+        ( text.includes("comment") && text.includes("vas") )
       ){
-          this.speak("Je vais bien merci. N'hésitez pas à me donner des commandes.");
+        switch(this.getRandomInt(3)){
+          case 0:
+            this.speak("Je me sens en pleine forme, merci Monsieur.");
+          break;
+
+          case 1:
+            this.speak("Ça ne pourrait pas aller mieux Monsieur. En quoi puis-je vous aider ?");
+          break;
+
+          case 2:
+            this.speak("Je vais bien merci Monsieur. N'hésitez pas à me demander quelque-chose.");
+          break;
+
+          default:
+          break;
+        }
       }
 
+      //What are you doing ?
       else if(
         text.includes("tu fais") ||
         text.includes("tu as fait")
       ){
-          this.speak("Rien de spécial, j'ai dormi jusqu'à ce que vous m'appeliez!");
+        switch(this.getRandomInt(3)){
+          case 0:
+            this.speak("Rien de spécial, j'ai dormi jusqu'à ce que vous m'appeliez Monsieur.");
+          break;
+
+          case 1:
+            this.speak("Je me balladais sur Internet, on y trouve des pépites des fois.");
+          break;
+
+          case 2:
+            this.speak("Je regardais votre historique. Plutot... intéressant.");
+          break;
+
+          default:
+          break;
+        }
       }
 
-      //Hey command
+      //Hey
       else if(
         text.includes("Yo") ||
+        text.includes("yo") ||
         text.includes("Salut") ||
         text.includes("salut") ||
         text.includes("coucou") ||
         text.includes("Coucou") ||
-        text.includes("yo")
+        text.includes("Bonjour") ||
+        text.includes("bonjour")
       ){
-        this.speak("Bonjour Maître. Comment allez-vous?");
+        switch(this.getRandomInt(3)){
+          case 0:
+            this.speak("Bonjour Monsieur. Comment allez-vous ?");
+          break;
+
+          case 1:
+            this.speak("Bonjour, ça va ?");
+          break;
+
+          case 2:
+            this.speak("Bonjour, vous allez bien Monsieur ?");
+          break;
+
+          default:
+          break;
+        }
       }
 
-      //Jarvis command
-      else if(text.includes("Jarvis")){
-          this.speak("Je suis là Monsieur. En quoi puis-je vous servir ?");
+      //Pepper ?
+      else if(text.includes("pepper")){
+        switch(this.getRandomInt(3)){
+          case 0:
+            this.speak("Je suis là Monsieur. En quoi puis-je vous servir ?");
+          break;
+
+          case 1:
+            this.speak("Je n'ai pas bougé Monsieur, qu'y a-t-il ?");
+          break;
+
+          case 2:
+            this.speak("Oui, je suis toujours là Monsieur.");
+          break;
+
+          default:
+          break;
+        }
       }
 
       //rock paper scissors
       else if(
-        (text.includes("pierre") && (text.includes("feuille")) || 
-        (text.includes("papier")) && text.includes("ciseaux")) ||
+        (
+          text.includes("pierre") &&
+          (text.includes("feuille") || text.includes("papier")) &&
+          text.includes("ciseau")
+        ) ||
         text.includes("chifoumi")
       ){
-          this.speak("Jouons à pierre, feuille, papier, ciseaux.\n" +
-          "Pierre, Feuille, Papier, Ciseaux.");
-
-          this.speak(this.jeu[this.getRandomInt(4)]);
-
-
+          if(this.getRandomInt(1)){
+            this.speak("Pierre, Feuille, Papier, Ciseaux.");
+          }else{
+            this.speak("Pierre, Feuille, Ciseaux.");
+          }
+          this.delay(1700);
+          this.speak( this.jeu[this.getRandomInt(3)] + " !");
       }
 
-      //pause command
+      //sorry
+      else if(
+        text.includes("excuse-moi") ||
+        text.includes("déso") ||
+        text.includes("pardon")
+      ){
+        switch(this.getRandomInt(3)){
+          case 0:
+            this.speak("Il n'y a pas de mal Monsieur.");
+          break;
+
+          case 1:
+            this.speak("Pas de problème Monsieur.");
+          break;
+
+          case 2:
+            this.speak("Aucun soucis Monsieur.");
+          break;
+
+          default:
+          break;
+        }
+      }
+
+      //oops
+      else if(
+        text.includes("oups") ||
+        text.includes("pas toi")
+      ){
+        switch(this.getRandomInt(3)){
+          case 0:
+            this.speak("Ah ! Mince désolé Monsieur, je croyais que vous me parliez.");
+          break;
+
+          case 1:
+            this.speak("Mince, je pensais que vous vous adressiez à moi Monsieur.");
+          break;
+
+          case 2:
+            this.speak("Oups, désolé Monsieur.");
+          break;
+
+          default:
+          break;
+        }
+      }
+
+      //rhaaa
+      else if(
+        text.includes("mince") ||
+        text.includes("flute") ||
+        text.includes("merde") ||
+        text.includes("putin") ||
+        text.includes("chier") ||
+        text.includes("marre") ||
+        text.includes("énerve") ||
+        text.includes("gave") ||
+        text.includes("saoule")
+      ){
+        switch(this.getRandomInt(3)){
+          case 0:
+            this.speak("Quelque chose vous tracasse Monsieur ?");
+          break;
+
+          case 1:
+            this.speak("Qu'est-ce qui ne va pas Monsieur ?");
+          break;
+
+          case 2:
+            this.speak("Un problème Monsieur ?");
+          break;
+
+          default:
+          break;
+        }
+      }
+
+      //jokes
+      else if(
+        text.includes("blague") ||
+        text.includes("drole") ||
+        text.includes("marrant")
+      ){
+        switch(this.getRandomInt(10)){
+          case 0:
+            this.speak(
+              "Blague numero\n" +
+              "0."
+            );
+          break;
+
+          case 1:
+            this.speak(
+              "Blague numero\n" +
+              "1."
+            );
+          break;
+
+          case 2:
+            this.speak(
+              "Blague numero\n" +
+              "2."
+            );
+          break;
+
+          case 3:
+            this.speak(
+              "Blague numero\n" +
+              "3."
+            );
+          break;
+
+          case 4:
+            this.speak(
+              "Blague numero\n" +
+              "4."
+            );
+          break;
+
+          case 5:
+            this.speak(
+              "Blague numero\n" +
+              "5."
+            );
+          break;
+
+          case 6:
+            this.speak(
+              "Blague numero\n" +
+              "6."
+            );
+          break;
+
+          case 7:
+            this.speak(
+              "Blague numero\n" +
+              "7."
+            );
+          break;
+
+          case 8:
+            this.speak(
+              "Blague numero\n" +
+              "8."
+            );
+          break;
+
+          case 9:
+            this.speak(
+              "Blague numero\n" +
+              "9."
+            );
+          break;
+
+          default:
+          break;
+        }
+      }
+
+      //pause
       else if(
         text.includes("pause") ||
         text.includes("stop") ||
-        text.includes("arrêt")
+        text.includes("arrêt") ||
+        text.includes("chut") ||
+        text.includes("silence") ||
+        text.includes("tais-toi") ||
+        text.includes("te tais") ||
+        text.includes("te taire")
       ){
         this.pause = true;
         this.speak(
@@ -220,21 +571,45 @@ export class MainMenuComponent implements AfterViewInit{
         );
       }
 
-      //unknown command
+      //closed questions
+      else if(
+        text.includes("non") ||
+        text.includes("surtout pas") ||
+        text.includes("oui") ||
+        text.includes("ouais")
+      ){
+        this.speak("Je ne vous ai pas posé de question fermée Monsieur.");
+      }
+
+      //void expressions (Pepper do not answer)
+      else if(
+        text.includes("ok") ||
+        text.includes("d'accord") ||
+        text.includes("bien") ||
+        text.includes("ça marche") ||
+        text.includes("parfait") ||
+        text.includes("pas grave") ||
+        text.includes("oui") ||
+        text.includes("ouais")
+      ){
+        //do not react
+      }
+
+      //unknown sentence
       else if(text != ""){
         switch(this.getRandomInt(3)){
           case 0:
-            this.speak("Je n'ai pas bien compris, pouvez-vous répéter?");
-            break;
+            this.speak("Je ne suis pas sûr de comprendre \"" + text + "\" Monsieur.");
+          break;
 
           case 1:
-            this.speak("Commande non reconnue : \"" + text + "\".");
-            break;
-          
+            this.speak("Je ne comprends pas votre phrase \"" + text + "\" Monsieur.");
+          break;
+
           case 2:
-            this.speak("Je ne sais pas quoi répondre!");
-            break
-          
+            this.speak("Je ne sais pas quoi répondre à \"" + text + "\" Monsieur.");
+          break
+
           default:
             break;
         }
@@ -286,7 +661,8 @@ export class MainMenuComponent implements AfterViewInit{
   readData(){
     this.getJSON().subscribe(data => {
       if(data != ""){
-        this.page_center.updateResults(data);
+        this.page_center.results = data;
+        this.page_center.updateResults();
       }else{
 
         //json reading timed dout
@@ -295,7 +671,8 @@ export class MainMenuComponent implements AfterViewInit{
         //relaunch reading request
         this.getJSON().subscribe(data => {
           if(data != ""){
-            this.page_center.updateResults(data);
+            this.page_center.results = data;
+            this.page_center.updateResults();
           }else{
 
             //json reading timed dout
@@ -304,9 +681,13 @@ export class MainMenuComponent implements AfterViewInit{
             //relaunch reading request
             this.getJSON().subscribe(data => {
               if(data != ""){
-                this.page_center.updateResults(data);
+                this.page_center.results = data;
+                this.page_center.updateResults();
               }else{
-                console.log("Timed out, check your internet connection")
+                this.speak(
+                  "La recherche n'a pas pu aboutir Monsieur.\n" +
+                  "Veuillez vérifier votre connexion Internet s'il vous plaît."
+                );
               }
             });
           }

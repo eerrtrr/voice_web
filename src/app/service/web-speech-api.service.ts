@@ -49,7 +49,7 @@ export class VoiceRecognitionService {
       }
 
       //relaunch recognition
-      console.log(this.finalSentence);
+      //console.log(this.finalSentence);
       this.sentence = "";
       this.recognition.start();
     });
@@ -66,8 +66,8 @@ export class VoiceSynthetizerService{
 
   initSynthesis(): void {
     this.speechSynthesizer.volume = 1;
-    this.speechSynthesizer.rate = 1.1;
-    this.speechSynthesizer.pitch = 0.5;
+    this.speechSynthesizer.rate = 1.2;
+    this.speechSynthesizer.pitch = 1.0;
   }
 
   speak(message: string): void {
