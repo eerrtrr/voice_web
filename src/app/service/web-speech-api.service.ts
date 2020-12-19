@@ -14,6 +14,7 @@ export class VoiceRecognitionService {
   recognition = new webkitSpeechRecognition();
   private sentence = "";
   public finalSentence = "";
+  public synthetizerIsSpeaking: boolean = false;
 
   constructor(){}
 
@@ -38,10 +39,17 @@ export class VoiceRecognitionService {
     //when recognizer has timed out
     this.recognition.addEventListener('end', (condition) => {
 
-      //update the final sentence detected
-      this.finalSentence = this.sentence;
+      if(!this.synthetizerIsSpeaking){
+        //update the final sentence detected
+        this.finalSentence = this.sentence;
+      }
+      else{
+        this.recognition.abort();
+        this.synthetizerIsSpeaking = false;
+      }
 
       //relaunch recognition
+      console.log(this.finalSentence);
       this.sentence = "";
       this.recognition.start();
     });
@@ -52,13 +60,11 @@ export class VoiceRecognitionService {
 
 export class VoiceSynthetizerService{
 
-  speechSynthesizer!: SpeechSynthesisUtterance;
-  isSynthesizing: boolean = false;
+  public speechSynthesizer = new SpeechSynthesisUtterance();
 
   constructor(){}
 
   initSynthesis(): void {
-    this.speechSynthesizer = new SpeechSynthesisUtterance();
     this.speechSynthesizer.volume = 1;
     this.speechSynthesizer.rate = 1.1;
     this.speechSynthesizer.pitch = 0.5;
@@ -67,8 +73,6 @@ export class VoiceSynthetizerService{
   speak(message: string): void {
     this.speechSynthesizer.lang = "fr";
     this.speechSynthesizer.text = message;
-    console.log("start");
     speechSynthesis.speak(this.speechSynthesizer);
-    console.log("end");
   }
 }

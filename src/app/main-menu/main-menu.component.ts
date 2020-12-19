@@ -29,8 +29,8 @@ export class MainMenuComponent implements AfterViewInit{
   //Jarvis
   private JarvisText;
   private pause: boolean = true;
-
-
+  private synthetizerIsSpeaking: boolean = false;
+  private jeu: string[] = ["Pierre", "Feuille", "Papier", "Ciseaux"];
 
 	//methods
   constructor(
@@ -82,7 +82,9 @@ export class MainMenuComponent implements AfterViewInit{
 
   //Jarvis speech
   speak(text: string): void{
-    this.JarvisText.innerHTML = text;
+    this.JarvisText.innerHTML = "Jarvis > " + text;
+    this.voiceSynthetizer.speak(text);
+    this.voiceRecognizer.synthetizerIsSpeaking = true;
   }
 
 
@@ -90,14 +92,18 @@ export class MainMenuComponent implements AfterViewInit{
   //commands
   analyseCommand(text : string){
 
+    //if Jarvis just spoke
+    if(text != "" && this.voiceRecognizer.synthetizerIsSpeaking){
+      text = "";
+    }
+
     //if in pause
-    if(this.pause){
+    else if(this.pause){
 
       //resume pause
       if(text.includes("Jarvis")){
         this.pause = false;
-        this.speak("Jarvis > Oui Monsieur, je suis à vous.");
-        this.voiceSynthetizer.speak("Oui Monsieur, je suis à vous.");
+        this.speak("Oui Monsieur, je suis à vous.");
       }
     }
 
@@ -106,12 +112,6 @@ export class MainMenuComponent implements AfterViewInit{
       //command help
       if(text.includes("aide")){
         this.speak(
-          "Jarvis > Voici la liste des commandes disponibles Monsieur :\n" +
-          " - aide                      : Affiche la liste des commandes disponibles.\n" +
-          " - cherche/recherche <texte> : Lance une recherche sur Internet." +
-          " - pause/stop/arrêt          : Met en pause mes services jusqu'à votre prochain appel."
-        );
-        this.voiceSynthetizer.speak(
           "Voici la liste des commandes disponibles Monsieur :\n" +
           " - aide                      : Affiche la liste des commandes disponibles.\n" +
           " - cherche/recherche <texte> : Lance une recherche sur Internet." +
@@ -123,18 +123,26 @@ export class MainMenuComponent implements AfterViewInit{
       else if(text.includes("cherche")){
         
         //get research text
-        text = text.slice( text.indexOf("cherche")+7 ).trim();
+        if(text.includes("chercher"))
+          text = text.slice( text.indexOf("chercher")+8 ).trim();
+
+        else if(text.includes("-moi"))
+          text = text.slice( text.indexOf("moi")+3 ).trim();
+
+        else if(text.includes("cherche"))
+          text = text.slice( text.indexOf("cherche")+7 ).trim();
+
+        if(text.includes("s'il te plaît"))
+          text = text.slice( 0, text.indexOf("s'il")-1).trim();
         
         //incorrect research
         if(text === ""){
-          this.speak("Jarvis > Vous n'avez rien demandé à rechercher Monsieur.");
-          this.voiceSynthetizer.speak("Vous n'avez rien demandé à rechercher Monsieur.");
+          this.speak("Vous n'avez rien demandé à rechercher Monsieur.");
         }
 
         //launch research
         else{
-          this.speak("Jarvis > Voici les résultats sur la recherche \"" + text + "\" Monsieur.");
-          this.voiceSynthetizer.speak("Voici les résultats sur la recherche \"" + text + "\" Monsieur.");
+          this.speak("Voici les résultats sur la recherche \"" + text + "\" Monsieur.");
           this.page_center.searchBar.value = text;
           this.sendData(this.neutralSentence(text));
         }
@@ -142,25 +150,61 @@ export class MainMenuComponent implements AfterViewInit{
 
       //thank you command
       else if(text.includes("merci")){
-          this.speak("Jarvis > Mais de rien Monsieur, c'est un honneur de vous servir.");
-          this.voiceSynthetizer.speak("Mais de rien Monsieur, c'est un honneur de vous servir.");
+          this.speak("Mais de rien Monsieur, c'est un honneur de vous servir.");
+      }
+
+      //cool command
+      else if(
+        text.includes("cool") || 
+        text.includes("Cool")
+      ){
+          this.speak("Ravie que cela vous plaise.");
+      }
+
+      //How are you command
+      else if(
+        text.includes("ça va") ||
+        text.includes("et toi")
+      ){
+          this.speak("Je vais bien merci. N'hésitez pas à me donner des commandes.");
+      }
+
+      else if(
+        text.includes("tu fais") ||
+        text.includes("tu as fait")
+      ){
+          this.speak("Rien de spécial, j'ai dormi jusqu'à ce que vous m'appeliez!");
+      }
+
+      //Hey command
+      else if(
+        text.includes("Yo") ||
+        text.includes("Salut") ||
+        text.includes("salut") ||
+        text.includes("coucou") ||
+        text.includes("Coucou") ||
+        text.includes("yo")
+      ){
+        this.speak("Bonjour Maître. Comment allez-vous?");
       }
 
       //Jarvis command
       else if(text.includes("Jarvis")){
-          this.speak("Jarvis > Je suis là Monsieur. En quoi puis-je vous servir ?");
-          this.voiceSynthetizer.speak("Je suis là Monsieur. En quoi puis-je vous servir ?");
+          this.speak("Je suis là Monsieur. En quoi puis-je vous servir ?");
       }
 
       //rock paper scissors
       else if(
-        (
-          text.includes("pierre") && (text.includes("feuille") || text.includes("papier")) && text.includes("ciseaux")
-        ) ||
+        (text.includes("pierre") && (text.includes("feuille")) || 
+        (text.includes("papier")) && text.includes("ciseaux")) ||
         text.includes("chifoumi")
       ){
-          this.speak("Jarvis > Très bien, jouons à pierre feuille ciseaux.");
-          this.voiceSynthetizer.speak("Très bien, jouons à pierre feuille ciseaux.");
+          this.speak("Jouons à pierre, feuille, papier, ciseaux.\n" +
+          "Pierre, Feuille, Papier, Ciseaux.");
+
+          this.speak(this.jeu[this.getRandomInt(4)]);
+
+
       }
 
       //pause command
@@ -171,10 +215,6 @@ export class MainMenuComponent implements AfterViewInit{
       ){
         this.pause = true;
         this.speak(
-          "Jarvis > Très bien, je vous laisse tranquille Monsieur.\n" +
-          "Appelez-moi quand vous aurez besoin de moi à nouveau."
-        );
-        this.voiceSynthetizer.speak(
           "Très bien, je vous laisse tranquille Monsieur.\n" +
           "Appelez-moi quand vous aurez besoin de moi à nouveau."
         );
@@ -182,8 +222,22 @@ export class MainMenuComponent implements AfterViewInit{
 
       //unknown command
       else if(text != ""){
-        this.speak("Jarvis > Commande non reconnue : \"" + text + "\".");
-        this.voiceSynthetizer.speak("Commande non reconnue : \"" + text + "\".");
+        switch(this.getRandomInt(3)){
+          case 0:
+            this.speak("Je n'ai pas bien compris, pouvez-vous répéter?");
+            break;
+
+          case 1:
+            this.speak("Commande non reconnue : \"" + text + "\".");
+            break;
+          
+          case 2:
+            this.speak("Je ne sais pas quoi répondre!");
+            break
+          
+          default:
+            break;
+        }
       }
     }
 
@@ -199,6 +253,9 @@ export class MainMenuComponent implements AfterViewInit{
     while( Date.now() < startDate+delay);
   }
 
+  getRandomInt(max: number): number{
+    return Math.floor(Math.random() * Math.floor(max));
+  }
 
 
   //send research query
@@ -233,17 +290,27 @@ export class MainMenuComponent implements AfterViewInit{
       }else{
 
         //json reading timed dout
-        this.delay(1000);
+        this.delay(1500);
 
         //relaunch reading request
         this.getJSON().subscribe(data => {
           if(data != ""){
             this.page_center.updateResults(data);
+          }else{
+
+            //json reading timed dout
+            this.delay(1500);
+
+            //relaunch reading request
+            this.getJSON().subscribe(data => {
+              if(data != ""){
+                this.page_center.updateResults(data);
+              }else{
+                console.log("Timed out, check your internet connection")
+              }
+            });
           }
-
-          //no timeout relaunch
         });
-
       }
     });
   }
