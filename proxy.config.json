@@ -1,0 +1,8 @@
+{
+    "/api/*": {
+      "target": "https://www.blagues-api.fr",
+      "secure": false,
+      "changeOrigin": true,
+      "logLevel": "debug"
+    }
+  }

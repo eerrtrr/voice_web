@@ -475,82 +475,21 @@ export class MainMenuComponent implements AfterViewInit{
       else if(
         text.includes("blague") ||
         text.includes("drole") ||
-        text.includes("marrant")
+        text.includes("marrant") ||
+        text.includes("rire")
       ){
-        switch(this.getRandomInt(10)){
-          case 0:
-            this.speak(
-              "Blague numero\n" +
-              "0."
-            );
-          break;
-
-          case 1:
-            this.speak(
-              "Blague numero\n" +
-              "1."
-            );
-          break;
-
-          case 2:
-            this.speak(
-              "Blague numero\n" +
-              "2."
-            );
-          break;
-
-          case 3:
-            this.speak(
-              "Blague numero\n" +
-              "3."
-            );
-          break;
-
-          case 4:
-            this.speak(
-              "Blague numero\n" +
-              "4."
-            );
-          break;
-
-          case 5:
-            this.speak(
-              "Blague numero\n" +
-              "5."
-            );
-          break;
-
-          case 6:
-            this.speak(
-              "Blague numero\n" +
-              "6."
-            );
-          break;
-
-          case 7:
-            this.speak(
-              "Blague numero\n" +
-              "7."
-            );
-          break;
-
-          case 8:
-            this.speak(
-              "Blague numero\n" +
-              "8."
-            );
-          break;
-
-          case 9:
-            this.speak(
-              "Blague numero\n" +
-              "9."
-            );
-          break;
-
-          default:
-          break;
-        }
+        fetch('/api/random?disallow=limit', {
+          headers: {
+            'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNzUyMDk2OTQ1NzU3MjI1MDE1IiwibGltaXQiOjEwMCwia2V5IjoieTRqOU5MZnRZNk1sS2pZMDZBMzdRd202MUlCMjBVY1p6R1h5S0NjWkhveFgyckZQTUwiLCJjcmVhdGVkX2F0IjoiMjAyMC0xMi0yMFQxNDozNzowNiswMTowMCIsImlhdCI6MTYwODQ3MTQyNn0.8s5okncYqlPGMDN6E7qnTxyZIVeYbKENnpXUVKoAHvc',
+            'Access-Control-Allow-Origin': '*'
+          }})
+          .then(response => response.json())
+          .then(data => {
+            console.log(data);
+            this.voiceSynthetizer.speak("Ca tombe bien j'ai une super blague pour vous.\n"
+                                        + data.joke +"\n"
+                                        + data.answer +"\n");
+          })
       }
 
       //pause
