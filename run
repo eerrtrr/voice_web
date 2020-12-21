@@ -1,5 +1,0 @@
-cd src
-gnome-terminal --command="./Googlooper.sh"
-cd ..
-ng serve --open --no-live-reload
-

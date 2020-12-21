@@ -1,0 +1,94 @@
+#!/bin/bash
+
+# ==================== Voice Web - Installation Program ====================
+#
+#     This program is an installation software that will automatically
+# install all the required softwares for running Voice Web.
+#
+#     Once the installation process has finished, you can remove this
+# installation file, you don't need it anymore.
+#
+# Contact     : i.a.sebsil83@gmail.com
+# Youtube     : https://www.youtube.com/user/IAsebsil83
+# GitHub repo : https://github.com/iasebsil83
+#
+# Let's Code !                                                      By I.A.
+# ==========================================================================
+
+
+
+# STEP 1 : Check for an npm installation
+clear
+echo -e "Welcome in the VoiceWeb installation program.\n"
+echo -e "Checking for an existing version of npm installed...\n"
+
+npm help &> /dev/null
+
+#redirect if no npm installation is found
+if [[ $? == 0 ]]; then
+    echo -e "npm installation detected !\n"
+    sleep 5
+else
+    echo -e "Package \"npm\" is not detected on your computer."
+    echo -e "Please install it before installing VoiceWeb :\n"
+    echo -e "    > sudo apt install npm\n"
+    exit 1
+fi
+
+
+
+# STEP 2 : Create a local installation of Angular
+clear
+echo -e "Creating a local installation of Angular...\n"
+
+mkdir Angular
+cd Angular
+npm install @angular/cli
+
+
+
+# STEP 3 : Create a local installation of JSON server
+clear
+echo -e "Creating a local installation of JSON server...\n"
+
+mkdir ../JSONserver
+cd ../JSONserver
+npm install json-server
+cd ..
+
+
+
+# STEP 4 : Create a new Angular project
+ok=""
+while [[ ! $ok = "y" ]]
+do
+    clear
+    echo -e "We will now prepare the project installation.\n"
+    echo -e "Please say \"yes\" to all of the project requirements"
+    echo -e "and select \"CSS\" for default style format.\n"
+	read -p "Is that ok ? [y/n] > " ok
+done
+echo -e "\nCreating new project...\n"
+
+./Angular/node_modules/.bin/ng new VoiceWeb
+
+
+
+# STEP 5 : Take the generated libraries into folder "Project"
+mv VoiceWeb/node_modules Project/
+mv VoiceWeb/e2e Project/
+rm -rf VoiceWeb
+
+
+
+# STEP 6 : Move the "run" application up and destroy the "install"
+mv Project/run $PWD
+rm install
+
+
+
+# Finished !
+clear
+echo -e "VoiceWeb installation has finished !\n"
+echo "Enjoy !                I.A. & eerrtrr"
+

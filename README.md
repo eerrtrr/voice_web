@@ -10,56 +10,37 @@
 
  - **Linux Operating System**
  This project is only available on linux for the moment.
- It requires some packages so make sure you have it all before running the program.
 
  &nbsp;
- - **Package : npm/nodejs**
+ - **Package : npm**
  You need to have nodejs and npm to hopefully see one day this project works.
  The npm package is enough to install both.
- `sudo apt install npm` for apt systems.
+ `sudo apt install npm` on apt systems.
 
- &nbsp;
- - **Package : Angular**
- Install it via your terminal : `sudo npm install -g @angular/cli`.
-
- &nbsp;
- - **Package : JSON server**
- Install it via your terminal : `sudo npm install -g json-server`.
-
- &nbsp;
- - **Program : Googler**
- Install it via the GitHub repository : `https://github.com/jarun/googler`.
- DON'T INSTALL IT VIA APT, IT MAY NOT WORK WELL !
-
-**I recommend you to restart you pc after that, lots of packages have been installed**
 &nbsp;
 
 
-## Create and build the project
+## Install
 
- - **Create Angular folder**
- Go into a folder where you want to keep the project with angular.
- Open a terminal and then type `ng new "folder-name"`, replace "folder-name" with the name you want.
- A bunch of things will be displayed,
- - Choose **yes** for angular routine
- - Choose **css** for stylesheet format
- That's all! You've just created your main folder.
+ - **Installation process**
+ The only thing you have to do is to open a terminal
+ inside the main folder and run program **"install"** :
+     `./install`
 
-  &nbsp;
- - **Build the project**
- Go into your main folder and remove the folder "src".
- Take all the files you have just downloaded from the repository and paste them here.
- You will be asked to replace some files, just say **yes**.
- (The src folder replaces the one you've just deleted).
- Your project is now built.
+ That's all for the installation process !
 
-  &nbsp;
+&nbsp;
+
+
+## Run project
  - **Run the project**
  Open a terminal into your main folder.
- Then type command `./run`.
+ Then run program **"run"** :
+         `./run`
+
  The project is running.
- Angular will compile the project and open your favorite web browser to show you the future.
- &nbsp;
+ Angular will compile the project and open your favorite web browser
+ to show you the future of web researches.
 
  &nbsp;
  

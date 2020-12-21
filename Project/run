@@ -1,0 +1,37 @@
+#!/bin/bash
+
+
+
+#launch JSON server in background
+clear
+echo -e "Starting JSON server in background...\n"
+
+./JSONserver/node_modules/.bin/json-server Project/src/assets/research.json &
+
+sleep 2
+echo -e "\nJSON server has started.\n"
+echo -e "Please remember to close this terminal to end the JSON server.\n"
+sleep 5
+
+
+
+#launch Googlooper in a new terminal
+clear
+echo -e "Starting Googlooper in another terminal...\n"
+
+cd Googlooper
+gnome-terminal --command="./Googlooper.sh" 2> /dev/null
+cd ..
+
+echo "Googlooper has started."
+sleep 5
+
+
+
+#launch angular project
+clear
+echo -e "Starting angular project : VoiceWeb...\n"
+
+cd Project
+./../Angular/node_modules/.bin/ng serve --open --no-live-reload
+
