@@ -474,7 +474,7 @@ export class MainMenuComponent implements AfterViewInit{
       //jokes
       else if(
         text.includes("blague") ||
-        text.includes("drole") ||
+        text.includes("drôle") ||
         text.includes("marrant") ||
         text.includes("rire")
       ){
@@ -485,10 +485,27 @@ export class MainMenuComponent implements AfterViewInit{
           }})
           .then(response => response.json())
           .then(data => {
-            console.log(data);
-            this.voiceSynthetizer.speak("Ca tombe bien j'ai une super blague pour vous.\n"
-                                        + data.joke +"\n"
-                                        + data.answer +"\n");
+            var intro = ""
+
+            //set variable intro
+            switch(this.getRandomInt(3)){
+                case 0:
+                    intro = "Ça tombe bien j'ai une super blague pour vous.\n";
+                break;
+
+                case 1:
+                    intro = "J'en ai une qui va vous plaire.\n";
+                break;
+
+                case 2:
+                    intro = "J'en ai une assez sympa.\n";
+                break;
+
+                default:
+                break;
+            }
+
+            this.speak(intro + data.joke + "\n" + data.answer);
           })
       }
 
