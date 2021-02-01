@@ -11,7 +11,6 @@
  - **Linux Operating System**
  This project is only available on linux for the moment.
 
- &nbsp;
  - **Package : npm**
  You need to have nodejs and npm to hopefully see one day this project works.
  The npm package is enough to install both.
