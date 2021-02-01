@@ -1,6 +1,6 @@
 # **VOICE INTO THE WEB**
 
-***Come to see the future of the web, an handfree place where your voice is all you need to realize your dreams...*** 
+***Come to see the future of the web, a hands-free place where your voice is all you need to realize your dreams...*** 
 
 
 
