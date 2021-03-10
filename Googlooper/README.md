@@ -1,19 +1,17 @@
 ===================== GOOGLOOPER =====================
 
-     Googlooper is a little application made for
- an angular project "VoiceWeb" available here :
+ Googlooper is a little application made for
+an angular project "VoiceWeb" available here :
 
-     https://github.com/eerrtrr/voice_web
+ https://github.com/eerrtrr/voice_web
 
-     It uses some functionalities of "Googler"
- which is another project available here :
+ It uses some functionalities of "Googler"
+which is another project available here :
 
-     https://github.com/jarun/googler
+ https://github.com/jarun/googler
 
-     That is all for Googlooper, for more information
- about it, please check directly in the VoiceWeb
- project. The rest of this file is now dedicated to
- the Googler README.
+ That is all for Googlooper, for more information
+about it, please check directly in the VoiceWeb project. The rest of this file is now dedicated to the Googler README.
 
 ======================================================
 
@@ -248,7 +246,7 @@ To remove `googler` and associated docs, run
 
 To install the latest stable version, run
 
-    $ sudo curl -o /usr/local/bin/googler https://raw.githubusercontent.com/jarun/googler/v4.3.1/googler && sudo chmod +x /usr/local/bin/googler
+    $ sudo curl -o /usr/local/bin/googler https://raw.githubusercontent.com/jarun/googler/v4.3.2/googler && sudo chmod +x /usr/local/bin/googler
 
 You could then let googler upgrade itself by running
 
@@ -488,7 +486,7 @@ Pull requests are welcome. Please visit [#209](https://github.com/jarun/googler/
 ### Developers
 
 1. Copyright © 2008 Henri Hakkinen
-2. Copyright © 2015-2020 [Arun Prakash Jana](https://github.com/jarun)
+2. Copyright © 2015-2021 [Arun Prakash Jana](https://github.com/jarun)
 3. [Zhiming Wang](https://github.com/zmwangx)
 4. [Johnathan Jenkins](https://github.com/shaggytwodope)
 5. [SZ Lin](https://github.com/szlin)
