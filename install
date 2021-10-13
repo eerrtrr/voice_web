@@ -77,19 +77,6 @@ read
 export NVM_DIR="$PWD/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
-#npm
-echo "Installing npm "
-nvm install latest && {
-	echo "Done."
-} || {
-	echo "Unable to get npm (using nvm)."
-	echo "Maybe nvm has not been downloaded from https://github.com/nvm-sh/nvm ?"
-	echo -e "\n[Installation cancelled]"
-	exit 1
-}
-echo -e "\n[Press ENTER to continue]"
-read
-
 #nodejs
 clear
 node --version &> /dev/null && {
