@@ -49,20 +49,6 @@ git version &> /dev/null && {
 echo -e "\n[Press ENTER to continue]"
 read
 
-#npm
-clear
-npm --version &> /dev/null && {
-	echo "npm already installed."
-} || {
-	echo "VoiceWeb requires package 'npm'."
-	echo "Please install it before retrying :"
-	echo "    > sudo apt install npm"
-	echo -e "\n[Installation cancelled]"
-	exit 1
-}
-echo -e "\n[Press ENTER to continue]"
-read
-
 
 
 
@@ -84,6 +70,23 @@ else
 	}
 	echo -e "\nDone."
 fi
+echo -e "\n[Press ENTER to continue]"
+read
+
+#preparation for the use of nvm
+export NVM_DIR="$PWD/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
+#npm
+echo "Installing npm "
+nvm install latest && {
+	echo "Done."
+} || {
+	echo "Unable to get npm (using nvm)."
+	echo "Maybe nvm has not been downloaded from https://github.com/nvm-sh/nvm ?"
+	echo -e "\n[Installation cancelled]"
+	exit 1
+}
 echo -e "\n[Press ENTER to continue]"
 read
 
