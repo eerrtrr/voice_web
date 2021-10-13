@@ -24,7 +24,7 @@ mkdir -p Angular JSONserver
 
 #presentation
 clear
-echo "Welcome in the VoiceWeb installation program.\n"
+echo -e "Welcome in the VoiceWeb installation program.\n"
 echo -e "\n[Press ENTER to continue]"
 read
 
@@ -113,25 +113,30 @@ read
 
 #angular
 clear
-if [[ -e Angular ]]
-cd Angular
-echo -e "Creating a local installation of Angular...\n"
-npm install @angular/cli && {
-	echo -e "\nDone."
-} || {
-	echo "Unable to install angular (using npm)."
-	echo "Maybe you do not have a correct Internet connection ?"
-	echo -e "Trying to use 'npm install @angular/cli' did not work."
-	echo -e "\n[Installation cancelled]"
-	exit 1
-}
+if [[ -e Angular ]]; then
+	echo "Angular already installed locally."
+else
+	mkdir Angular
+	cd Angular
+	echo -e "Creating a local installation of Angular...\n"
+	npm install @angular/cli && {
+		echo -e "\nDone."
+	} || {
+		echo "Unable to install angular (using npm)."
+		echo "Maybe you do not have a correct Internet connection ?"
+		echo -e "Trying to use 'npm install @angular/cli' did not work."
+		echo -e "\n[Installation cancelled]"
+		exit 1
+	}
+	cd ..
+fi
 echo -e "\n[Press ENTER to continue]"
 read
 
 #JSON server
 clear
 echo -e "Creating a local installation of JSON server...\n"
-cd ../JSONserver
+cd JSONserver
 npm install json-server && {
 	echo -e "\nDone."
 } || {
@@ -154,18 +159,18 @@ read
 
 #make sure user knows what to do
 ok=""
-while [[ ! $ok = 'y' ]]
+while [[ $ok != 'y' ]]
 do
-    clear
-    echo -e "We will now prepare the project installation.\n"
-    echo -e "Please say \"yes\" to all of the project requirements"
-    echo -e "and select \"CSS\" for default style format.\n"
+	clear
+	echo -e "We will now prepare the project installation.\n"
+	echo -e "Please say \"yes\" to all of the project requirements"
+	echo -e "and select \"CSS\" for default style format.\n"
 	read -p "Is that ok ? [y/n] > " ok
 done
 
 #create a new Angular project
 echo -e "\nCreating new Angular project...\n"
-./Angular/node_modules/.bin/ng new VoiceWeb && {
+./Angular/node_modules/bin/ng new VoiceWeb && {
 	echo -e "\nDone."
 } || {
 	echo "Unable to create angular project."
