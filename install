@@ -83,7 +83,7 @@ node --version &> /dev/null && {
 	echo "node.js already installed."
 } || {
 	echo -e "Installing node.js...\n"
-	./nvm/nvm.sh install node || {
+	nvm install node || {
 		echo "Unable to install node.js (using nvm)."
 		echo "Maybe you do not have a correct Internet connection ?"
 		echo -e "Trying to use './nvm.sh install node' did not work."
