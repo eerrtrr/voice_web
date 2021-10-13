@@ -22,11 +22,17 @@
 ## Install
 
  - **Installation process**
- The only thing you have to do is to open a terminal
- inside the main folder and run program **"install"** :
+ Open a terminal inside the main folder and run program **"install"** :
      `./install`
 
- That's all for the installation process !
+&nbsp;
+
+
+## Uninstall
+
+ - *Uninstallation process*
+ Open a terminal inside main folder and run program **uninstall** :
+     `./uninstall`
 
 &nbsp;
 
