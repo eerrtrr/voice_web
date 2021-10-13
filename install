@@ -83,7 +83,7 @@ node --version &> /dev/null && {
 	echo "node.js already installed."
 } || {
 	echo -e "Installing node.js...\n"
-	nvm install node || {
+	nvm install node@12.14.1 || {
 		echo "Unable to install node.js (using nvm)."
 		echo "Maybe you do not have a correct Internet connection ?"
 		echo -e "Trying to use './nvm.sh install node' did not work."
@@ -103,13 +103,12 @@ read
 
 #angular
 clear
-if [[ -e Angular ]]; then
+if [[ $(ls Angular) != "" ]]; then
 	echo "Angular already installed locally."
 else
-	mkdir Angular
 	cd Angular
 	echo -e "Creating a local installation of Angular...\n"
-	npm install @angular/cli && {
+	npm install angular@1.8.2 && {
 		echo -e "\nDone."
 	} || {
 		echo "Unable to install angular (using npm)."
