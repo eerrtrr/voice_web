@@ -6,7 +6,7 @@
 clear
 echo -e "Starting JSON server in background...\n"
 
-./JSONserver/node_modules/.bin/json-server Project/src/assets/research.json &
+./node_modules/.bin/json-server Project/src/assets/research.json &
 
 sleep 2
 echo -e "\nJSON server has started.\n"
@@ -33,5 +33,5 @@ clear
 echo -e "Starting angular project : VoiceWeb...\n"
 
 cd Project
-./../Angular/node_modules/.bin/ng serve --open --no-live-reload
+./../node_modules/.bin/ng serve --open --no-live-reload
 
