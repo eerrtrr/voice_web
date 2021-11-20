@@ -19,9 +19,6 @@
 
 # ---- INIT ----
 
-#prepare folders
-mkdir -p Angular JSONserver
-
 #presentation
 clear
 echo -e "Welcome in the VoiceWeb installation program.\n"
@@ -83,7 +80,7 @@ node --version &> /dev/null && {
 	echo "node.js already installed."
 } || {
 	echo -e "Installing node.js...\n"
-	nvm install node@12.14.1 || {
+	nvm install v12.22.7 || {
 		echo "Unable to install node.js (using nvm)."
 		echo "Maybe you do not have a correct Internet connection ?"
 		echo -e "Trying to use './nvm.sh install node' did not work."
@@ -99,16 +96,19 @@ read
 
 
 
-# ---- ANGULAR ----
+# ---- NODE MODULES ----
+
+#prepare installation of node modules
+mkdir node_modules
+cp Project/package.json $PWD #VERY IMPORTANT ! COMPATIBILITY DEPENDS ON THIS FILE ONLY !
 
 #angular
 clear
-if [[ $(ls Angular) != "" ]]; then
+if [[ -e node_modules/.bin/ng ]]; then
 	echo "Angular already installed locally."
 else
-	cd Angular
 	echo -e "Creating a local installation of Angular...\n"
-	npm install angular@1.8.2 && {
+	npm install @angular/cli && {
 		echo -e "\nDone."
 	} || {
 		echo "Unable to install angular (using npm)."
@@ -117,27 +117,32 @@ else
 		echo -e "\n[Installation cancelled]"
 		exit 1
 	}
-	cd ..
 fi
 echo -e "\n[Press ENTER to continue]"
 read
 
 #JSON server
 clear
-echo -e "Creating a local installation of JSON server...\n"
-cd JSONserver
-npm install json-server && {
-	echo -e "\nDone."
-} || {
-	echo "Unable to install json server (using npm)."
-	echo "Maybe you do not have a correct Internet connection ?"
-	echo -e "Trying to use 'npm install json-server' did not work."
-	echo -e "\n[Installation cancelled]"
-	exit 1
-}
-cd ..
+if [[ -e node_modules/.bin/json-server ]]; then
+	echo "JSON Server already installed locally."
+else
+	echo -e "Creating a local installation of JSON server...\n"
+	npm install json-server && {
+		echo -e "\nDone."
+	} || {
+		echo "Unable to install json server (using npm)."
+		echo "Maybe you do not have a correct Internet connection ?"
+		echo -e "Trying to use 'npm install json-server' did not work."
+		echo -e "\n[Installation cancelled]"
+		exit 1
+	}
+fi
 echo -e "\n[Press ENTER to continue]"
 read
+
+#remove install files
+rm -f package.json
+rm -f package-lock.json
 
 
 
@@ -148,18 +153,17 @@ read
 
 #make sure user knows what to do
 ok=""
-while [[ $ok != 'y' ]]
-do
+while [[ $ok != 'y' ]]; do
 	clear
 	echo -e "We will now prepare the project installation.\n"
-	echo -e "Please say \"yes\" to all of the project requirements"
-	echo -e "and select \"CSS\" for default style format.\n"
+	echo -e "Please say 'yes' to all of the project requirements"
+	echo -e "and select 'CSS' for default style format.\n"
 	read -p "Is that ok ? [y/n] > " ok
 done
 
 #create a new Angular project
 echo -e "\nCreating new Angular project...\n"
-./Angular/node_modules/bin/ng new VoiceWeb && {
+./node_modules/.bin/ng new VoiceWeb && {
 	echo -e "\nDone."
 } || {
 	echo "Unable to create angular project."
@@ -178,7 +182,8 @@ read
 # ---- GATHERING ----
 
 #move the generated libraries into "Project" + move up "run" & "uninstall" + remove "install"
-echo -e "\nReorganizing files & folders...\n"
+clear
+echo "Reorganizing files & folders...\n"
 mv VoiceWeb/node_modules Project/ && \
 mv VoiceWeb/e2e Project/          && \
 rm -rf VoiceWeb                   && \
