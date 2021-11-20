@@ -2,27 +2,6 @@
 
 
 
-#remove nvm
-rm -rf nvm && {
-	echo "Successfully removed nvm."
-} || {
-	echo "Unable to remove nvm."
-	echo "Maybe you have already removed it."
-}
-echo -e "\n[Press ENTER to continue]\n"
-read
-
-
-
-#suggest to uninstall 'npm'
-echo "VoiceWeb required the package 'npm' but you may need it elsewhere..."
-echo "If you do require it anymore, please uninstall it after this program by using command :"
-echo "    - sudo apt purge npm"
-echo -e "\n[Press ENTER to continue]\n"
-read
-
-
-
 #remove VoiceWeb
 rm -rf * && {
 	echo "Successfully removed VoiceWeb files."
