@@ -2,6 +2,11 @@
 
 
 
+#preparation for the use of nvm
+export NVM_DIR="$PWD/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
+
 #launch JSON server in background
 clear
 echo -e "Starting JSON server in background...\n"
