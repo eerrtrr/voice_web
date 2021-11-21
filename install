@@ -185,7 +185,7 @@ read
 
 #move the generated libraries into "Project" + move up "run" & "uninstall" + remove "install"
 clear
-echo "Reorganizing files & folders...\n"
+echo -e "Reorganizing files & folders...\n"
 mv VoiceWeb/node_modules Project/ && \
 mv VoiceWeb/e2e Project/          && \
 rm -rf VoiceWeb                   && \
