@@ -81,7 +81,7 @@ node --version &> /dev/null && {
 } || {
 	echo -e "Installing node.js...\n"
 	nvm install v12.22.7 && {
-		echo "\nDone."
+		echo -e "\nDone."
 	} || {
 		echo "Unable to install node.js (using nvm)."
 		echo "Maybe you do not have a correct Internet connection ?"
