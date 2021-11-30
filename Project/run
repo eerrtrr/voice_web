@@ -25,7 +25,17 @@ clear
 echo -e "Starting Googlooper in another terminal...\n"
 
 cd Googlooper
-gnome-terminal --command="./Googlooper.sh" 2> /dev/null
+case XDG_CURRENT_DESKTOP in
+	'LXDE')
+		lxterminal --command="./Googlooper.sh" 2> /dev/null
+	;;
+	'XFCE')
+		xfce4-terminal --command="./Googlooper.sh" 2> /dev/null
+	;;
+	'GNOME' | 'X-Cinnamon')
+		gnome-terminal --command="./Googlooper.sh" 2> /dev/null
+	;;
+esac
 cd ..
 
 echo "Googlooper has started."

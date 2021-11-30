@@ -34,15 +34,73 @@ read
 
 # git
 clear
+echo -e "Checking requirement : git\n"
 git version &> /dev/null && {
-	echo "git already installed."
+	echo "Package 'git' already installed."
 } || {
-	echo "VoiceWeb requires package 'git'."
-	echo "Please install it before retrying :"
+	echo "No package 'git' found."
+	echo "Please install it before :"
 	echo "    > sudo apt install git"
 	echo -e "\n[Installation cancelled]"
 	exit 1
 }
+echo -e "\n[Press ENTER to continue]"
+read
+
+#terminal prompt
+case $XDG_CURRENT_DESKTOP in
+
+	#lxde
+	'LXDE')
+		echo -e "Checking requirement : lxterminal\n"
+		lxterminal --help > /dev/null && {
+			echo "Package 'lxterminal' already installed."
+		} || {
+			echo "No package 'lxterminal' found."
+			echo "Please install it before :"
+			echo "    > sudo apt install lxterminal"
+			echo -e "\n[Installation cancelled]"
+			exit 1
+		}
+	;;
+
+	#xfce
+	'XFCE')
+		echo -e "Checking requirement : xfce4-terminal\n"
+		xfce4-terminal --help > /dev/null && {
+			echo "Package 'xfce4-terminal' already installed."
+		} || {
+			echo "No package 'xfce4-terminal' found."
+			echo "Please install it before :"
+			echo "    > sudo apt install xfce4-terminal"
+			echo -e "\n[Installation cancelled]"
+			exit 1
+		}
+	;;
+
+	#gnome & cinammon
+	'GNOME' | 'X-Cinnamon')
+		echo -e "Checking requirement : gnome-terminal\n"
+		gnome-terminal --help > /dev/null && {
+			echo "Package 'gnome-terminal' already installed."
+		} || {
+			echo "No package 'gnome-terminal' found."
+			echo "Please install it before :"
+			echo "    > sudo apt install gnome-terminal"
+			echo -e "\n[Installation cancelled]"
+			exit 1
+		}
+	;;
+
+	#unknown desktop environment
+	*)
+		echo "Unknown Desktop environment '$XDG_CURRENT_DESKTOP'."
+		echo "VoiceWeb may not work with your computer."
+		echo "Compatible desktop environments are : XFCE, LXDE, GNOME and X-Cinnamon."
+		echo -e "\n[Installation cancelled]"
+		exit 1
+	;;
+esac
 echo -e "\n[Press ENTER to continue]"
 read
 
