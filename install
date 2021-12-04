@@ -48,6 +48,7 @@ echo -e "\n[Press ENTER to continue]"
 read
 
 #terminal prompt
+clear
 case $XDG_CURRENT_DESKTOP in
 
 	#lxde
