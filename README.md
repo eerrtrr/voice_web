@@ -6,57 +6,75 @@
 
 &nbsp;
 
-## Required
+## Requirements
 
- - **Linux Operating System**
- This project is only available on linux for the moment.
-
- - **Package : npm**
- You need to have nodejs and npm to hopefully see one day this project works.
- The npm package is enough to install both.
- `sudo apt install npm` on apt systems.
+- **Linux Operating System**
+This project is only available on linux for the moment.
 
 &nbsp;
+
 
 
 ## Install
 
- - **Installation process**
- Open a terminal inside the main folder and run program **"install"** :
-     `./install`
+- **Installation process**
+Open a terminal inside the main folder and run program **install** :
+`./install`
 
 &nbsp;
 
 
+
 ## Uninstall
 
- - *Uninstallation process*
- Open a terminal inside main folder and run program **uninstall** :
-     `./uninstall`
+- *Uninstallation process*
+Open a terminal inside the main folder and run program **uninstall** :
+`./uninstall`
 
 &nbsp;
 
 
 ## Run project
- - **Run the project**
- Open a terminal into your main folder.
- Then run program **"run"** :
-         `./run`
 
- The project is running.
- Angular will compile the project and open your favorite web browser
- to show you the future of web researches.
+- **Running project**
+Open a terminal into your main folder and run program **run** :
+`./run`
 
- &nbsp;
- 
- ***Hope you will like this project, thanks for testing!***
+The project is running.
+Angular will compile the project and open your favorite web browser to show you the future of web researches.
 
+&nbsp;
+
+***Hope you will like this project, thanks for using it !***
 
 
+&nbsp;
+
+&nbsp;
 
 
+*Contact     : i.a.sebsil83@gmail.com*<br>
+*Youtube     : https://www.youtube.com/user/IAsebsil83*<br>
+*GitHub repo : https://github.com/eerrtrr*<br>
 
-<br><br><br><br><br><br><br><br><br><br>
+Let's Code ! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;By I.A. & eerrtrr
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
 # Here is the Angular README.md file :
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
