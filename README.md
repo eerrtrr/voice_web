@@ -21,8 +21,9 @@ This project is only available on linux for the moment.
 - **Installation process**
 
 Open a terminal inside the main folder and execute program **install** :
-
-`./install`
+```bash
+./install
+```
 
 &nbsp;
 
@@ -33,8 +34,9 @@ Open a terminal inside the main folder and execute program **install** :
 - **Uninstallation process**
 
 Open a terminal inside the main folder and run program **uninstall** :
-
-`./uninstall`
+```bash
+./uninstall
+```
 
 &nbsp;
 
@@ -44,8 +46,9 @@ Open a terminal inside the main folder and run program **uninstall** :
 - **Running project**
 
 Open a terminal into your main folder and run program **run** :
-
-`./run`
+```bash
+./run
+```
 
 The project is running.
 Angular will compile the project and open your favorite web browser to show you the future of web researches.
@@ -53,6 +56,8 @@ Angular will compile the project and open your favorite web browser to show you 
 &nbsp;
 
 ***Hope you will like this project, thanks for using it !***
+
+&nbsp;
 
 &nbsp;
 
@@ -65,6 +70,8 @@ Let's Code ! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;By I.A. & eerrtrr
+
+&nbsp;
 
 &nbsp;
 
