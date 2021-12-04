@@ -9,6 +9,7 @@
 ## Requirements
 
 - **Linux Operating System**
+
 This project is only available on linux for the moment.
 
 &nbsp;
@@ -18,8 +19,9 @@ This project is only available on linux for the moment.
 ## Install
 
 - **Installation process**
-Open a terminal inside the main folder and run program **install** :
-`./install`
+
+Open a terminal inside the main folder and execute program **install** :
+```./install```
 
 &nbsp;
 
@@ -27,9 +29,10 @@ Open a terminal inside the main folder and run program **install** :
 
 ## Uninstall
 
-- *Uninstallation process*
+- **Uninstallation process**
+
 Open a terminal inside the main folder and run program **uninstall** :
-`./uninstall`
+```./uninstall```
 
 &nbsp;
 
@@ -38,7 +41,7 @@ Open a terminal inside the main folder and run program **uninstall** :
 
 - **Running project**
 Open a terminal into your main folder and run program **run** :
-`./run`
+```./run```
 
 The project is running.
 Angular will compile the project and open your favorite web browser to show you the future of web researches.
@@ -47,11 +50,9 @@ Angular will compile the project and open your favorite web browser to show you 
 
 ***Hope you will like this project, thanks for using it !***
 
-
 &nbsp;
 
 &nbsp;
-
 
 *Contact     : i.a.sebsil83@gmail.com*<br>
 *Youtube     : https://www.youtube.com/user/IAsebsil83*<br>
