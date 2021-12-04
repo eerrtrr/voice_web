@@ -18,8 +18,6 @@ This project is only available on linux for the moment.
 
 ## Install
 
-- **Installation process**
-
 Open a terminal inside the main folder and execute program **install** :
 ```bash
 ./install
@@ -31,8 +29,6 @@ Open a terminal inside the main folder and execute program **install** :
 
 ## Uninstall
 
-- **Uninstallation process**
-
 Open a terminal inside the main folder and run program **uninstall** :
 ```bash
 ./uninstall
@@ -43,14 +39,12 @@ Open a terminal inside the main folder and run program **uninstall** :
 
 ## Run project
 
-- **Running project**
-
 Open a terminal into your main folder and run program **run** :
 ```bash
 ./run
 ```
 
-The project is running.
+The project is running.<br>
 Angular will compile the project and open your favorite web browser to show you the future of web researches.
 
 &nbsp;
