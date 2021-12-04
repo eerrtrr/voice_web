@@ -25,7 +25,7 @@ clear
 echo -e "Starting Googlooper in another terminal...\n"
 
 cd Googlooper
-case XDG_CURRENT_DESKTOP in
+case $XDG_CURRENT_DESKTOP in
 	'LXDE')
 		lxterminal --command="./Googlooper.sh" 2> /dev/null
 	;;
